@@ -21,7 +21,7 @@ export function renderMidnight(root) {
       <main style="flex: 1;">
         <!-- Immersive Hero Section -->
         <section id="hero" style="position: relative; height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-          <div style="position: absolute; inset: 0; background: url('/assets/fleet_sedan_side_1769556143358.png') center/cover; opacity: 0.25; filter: grayscale(100%); transition: transform 10s ease-out; transform: scale(1.1); animation: heroZoom 20s infinite alternate;"></div>
+          <div style="position: absolute; inset: 0; background: url('/assets/mcso_patrol_car.jpg') center/cover; opacity: 0.25; filter: grayscale(100%); transition: transform 10s ease-out; transform: scale(1.1); animation: heroZoom 20s infinite alternate;"></div>
           <style>
             @keyframes heroZoom { from { transform: scale(1.1); } to { transform: scale(1.2); } }
             @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
@@ -136,76 +136,228 @@ export function renderMidnight(root) {
            </div>
         </section>
 
-        <!-- Services with Detail Drawers -->
+        <!-- Services Section CTA-esque -->
         <section id="services" style="padding: 180px 10%; background: #0a0a0c;">
-           <div id="residential-anchor" style="margin-bottom: 20px;"></div>
-           <div class="service-card" style="padding: 60px; background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.05); cursor: pointer; margin-bottom: 30px; transition: all 0.3s;" onclick="this.classList.toggle('active')">
-              <div style="display: flex; justify-content: space-between; align-items: center;">
-                 <div style="display: flex; align-items: center; gap: 40px;">
-                    <div style="font-size: 2rem; font-weight: 100; color: #e5c158; opacity: 0.5;">RPP</div>
-                    <h3 style="font-size: 2.5rem; font-weight: 200;">Residential Protection</h3>
-                 </div>
-                 <div class="expand-icon" style="font-size: 2.5rem; color: #e5c158; transition: transform 0.4s;">+</div>
-              </div>
-              <div class="service-drawer" style="max-height: 0; overflow: hidden; transition: max-height 0.6s ease, padding 0.6s ease;">
-                 <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 80px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.05);">
-                    <div style="color: #888; line-height: 2; font-size: 1.15rem;">
-                       Michael Colon's team specializes in close-quarter, one-on-one executive protection. Our clients range from executive professionals and celebrities to families receiving personal threats.
-                       <br><br>
-                       Our residential security officers promote absolute attention to detail and exceptional drive to ensure your residence remains a sanctuary of peace while on the property.
-                    </div>
-                    <div style="background: url('/assets/fleet_suv_front_1769556132620.png') center/cover; height: 350px; filter: grayscale(100%);"></div>
-                 </div>
-              </div>
+           <div style="text-align: center; margin-bottom: 80px;">
+              <h2 style="font-size: 4rem; font-weight: 200; line-height: 1.1; margin-bottom: 30px; letter-spacing: -1px;">Core <span style="font-style: italic; font-family: 'Playfair Display', serif; color: #e5c158;">Capabilities.</span></h2>
+              <p style="font-size: 1.15rem; color: #666; max-width: 600px; margin: 0 auto;">Direct, elite solutions tailored for principal safety and asset protection.</p>
            </div>
-
-           <div id="commercial-anchor" style="margin-bottom: 20px;"></div>
-           <div class="service-card" style="padding: 60px; background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.05); cursor: pointer; transition: all 0.3s;" onclick="this.classList.toggle('active')">
-              <div style="display: flex; justify-content: space-between; align-items: center;">
-                 <div style="display: flex; align-items: center; gap: 40px;">
-                    <div style="font-size: 2rem; font-weight: 100; color: #e5c158; opacity: 0.5;">CPC</div>
-                    <h3 style="font-size: 2.5rem; font-weight: 200;">Commercial Risk Control</h3>
-                 </div>
-                 <div class="expand-icon" style="font-size: 2.5rem; color: #e5c158; transition: transform 0.4s;">+</div>
-              </div>
-              <div class="service-drawer" style="max-height: 0; overflow: hidden; transition: max-height 0.6s ease, padding 0.6s ease;">
-                 <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 80px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.05);">
-                    <div style="background: url('/assets/fleet_convoy_1769556157064.png') center/cover; height: 400px; filter: grayscale(100%);"></div>
-                    <div style="color: #888; line-height: 2; font-size: 1.15rem;">
-                       Having a physical security presence at your place of business creates a sense of safety and drives a positive overall perception of your company.
-                       <br><br>
-                       <strong>Operational Domains:</strong>
-                       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; color: #e5c158; font-size: 1rem;">
-                          <div>• Hospitals</div>
-                          <div>• Corporate Centers</div>
-                          <div>• Schools & Campuses</div>
-                          <div>• Financial Institutions</div>
-                          <div>• Shopping Centers</div>
-                          <div>• High-End Luxury Goods</div>
-                       </div>
+           
+           <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 1400px; margin: 0 auto;">
+              
+              <!-- Private Principal Security -->
+              <div id="residential-anchor" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; overflow: hidden; transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-10px)'; this.style.borderColor='#e5c158';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(255,255,255,0.05)';">
+                 <div style="height: 300px; background: url('/assets/fleet_suv_front_1769556132620.png') center/cover; filter: grayscale(100%); position: relative;">
+                    <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,10,12,1) 0%, transparent 100%);"></div>
+                    <div style="position: absolute; bottom: 30px; left: 40px; display: flex; align-items: center; gap: 20px;">
+                       <div style="font-size: 1.5rem; font-weight: 900; color: #e5c158; letter-spacing: 2px;">RPP</div>
+                       <h3 style="font-size: 1.8rem; font-weight: 200; color: #fff; margin: 0;">Residential</h3>
                     </div>
                  </div>
+                 <div style="padding: 40px; display: flex; flex-direction: column; flex: 1;">
+                    <p style="color: #888; line-height: 1.8; font-size: 1.1rem; margin-bottom: 30px; flex: 1;">
+                       Close-quarter, one-on-one executive protection. We ensure your residence remains a sanctuary of peace for your family.
+                    </p>
+                    <ul style="list-style: none; padding: 0; margin: 0 0 40px 0; color: #a0a0a0; font-size: 0.95rem; line-height: 2;">
+                       <li><span style="color: #e5c158; margin-right: 10px;">•</span> Executive Professionals</li>
+                       <li><span style="color: #e5c158; margin-right: 10px;">•</span> High-Net-Worth Individuals</li>
+                       <li><span style="color: #e5c158; margin-right: 10px;">•</span> Personal Threat Mitigation</li>
+                    </ul>
+                    <a href="#contact" style="background: transparent; color: #e5c158; border: 1px solid #e5c158; padding: 18px 0; text-align: center; font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 800; cursor: pointer; text-decoration: none; transition: all 0.3s;" onmouseover="this.style.background='#e5c158'; this.style.color='#0a0a0c';" onmouseout="this.style.background='transparent'; this.style.color='#e5c158';">
+                       Secure Perimeter
+                    </a>
+                 </div>
+              </div>
+
+              <!-- Personal Security Detail -->
+              <div id="personal-anchor" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; overflow: hidden; transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-10px)'; this.style.borderColor='#e5c158';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(255,255,255,0.05)';">
+                 <div style="height: 300px; background: url('/assets/fleet_sedan_side_1769556143358.png') center/cover; filter: grayscale(100%); position: relative;">
+                    <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,10,12,1) 0%, transparent 100%);"></div>
+                    <div style="position: absolute; bottom: 30px; left: 40px; display: flex; align-items: center; gap: 20px;">
+                       <div style="font-size: 1.5rem; font-weight: 900; color: #e5c158; letter-spacing: 2px;">PSD</div>
+                       <h3 style="font-size: 1.8rem; font-weight: 200; color: #fff; margin: 0;">Personal Detail</h3>
+                    </div>
+                 </div>
+                 <div style="padding: 40px; display: flex; flex-direction: column; flex: 1;">
+                    <p style="color: #888; line-height: 1.8; font-size: 1.1rem; margin-bottom: 30px; flex: 1;">
+                       Discreet, mobile protection forces providing absolute security for high-risk transits and public appearances.
+                    </p>
+                    <ul style="list-style: none; padding: 0; margin: 0 0 40px 0; color: #a0a0a0; font-size: 0.95rem; line-height: 2;">
+                       <li><span style="color: #e5c158; margin-right: 10px;">•</span> Advance Team Routing</li>
+                       <li><span style="color: #e5c158; margin-right: 10px;">•</span> Close-Protection Escorts</li>
+                       <li><span style="color: #e5c158; margin-right: 10px;">•</span> Secure Tactics</li>
+                    </ul>
+                    <a href="#contact" style="background: transparent; color: #e5c158; border: 1px solid #e5c158; padding: 18px 0; text-align: center; font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 800; cursor: pointer; text-decoration: none; transition: all 0.3s;" onmouseover="this.style.background='#e5c158'; this.style.color='#0a0a0c';" onmouseout="this.style.background='transparent'; this.style.color='#e5c158';">
+                       Deploy Unit
+                    </a>
+                 </div>
+              </div>
+
+              <!-- Corporate Asset Security -->
+              <div id="commercial-anchor" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; overflow: hidden; transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-10px)'; this.style.borderColor='#e5c158';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(255,255,255,0.05)';">
+                 <div style="height: 300px; background: url('/assets/fleet_convoy_1769556157064.png') center/cover; filter: grayscale(100%); position: relative;">
+                    <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,10,12,1) 0%, transparent 100%);"></div>
+                    <div style="position: absolute; bottom: 30px; left: 40px; display: flex; align-items: center; gap: 20px;">
+                       <div style="font-size: 1.5rem; font-weight: 900; color: #e5c158; letter-spacing: 2px;">CPC</div>
+                       <h3 style="font-size: 1.8rem; font-weight: 200; color: #fff; margin: 0;">Commercial Risk</h3>
+                    </div>
+                 </div>
+                 <div style="padding: 40px; display: flex; flex-direction: column; flex: 1;">
+                    <p style="color: #888; line-height: 1.8; font-size: 1.1rem; margin-bottom: 30px; flex: 1;">
+                       Physical presence at your business that drives safety and positive perception. Complete oversight and incident prevention.
+                    </p>
+                    <ul style="list-style: none; padding: 0; margin: 0 0 40px 0; color: #a0a0a0; font-size: 0.95rem; line-height: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                       <li><span style="color: #e5c158; margin-right: 10px;">•</span> Corp Centers</li>
+                       <li><span style="color: #e5c158; margin-right: 10px;">•</span> Hospitals</li>
+                       <li><span style="color: #e5c158; margin-right: 10px;">•</span> Campuses</li>
+                       <li><span style="color: #e5c158; margin-right: 10px;">•</span> Financial Inst.</li>
+                       <li><span style="color: #e5c158; margin-right: 10px;">•</span> Luxury Retail</li>
+                       <li><span style="color: #e5c158; margin-right: 10px;">•</span> Retail</li>
+                    </ul>
+                    <a href="#contact" style="background: transparent; color: #e5c158; border: 1px solid #e5c158; padding: 18px 0; text-align: center; font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 800; cursor: pointer; text-decoration: none; transition: all 0.3s;" onmouseover="this.style.background='#e5c158'; this.style.color='#0a0a0c';" onmouseout="this.style.background='transparent'; this.style.color='#e5c158';">
+                       Establish Control
+                    </a>
+                 </div>
+              </div>
+
+           </div>
+           
+           <div style="text-align: center; margin-top: 60px;">
+              <div style="display: inline-flex; align-items: center; gap: 15px; background: rgba(229, 193, 88, 0.05); border: 1px solid rgba(229, 193, 88, 0.2); padding: 15px 30px; border-radius: 4px;">
+                 <span style="color: #e5c158; font-weight: bold;">+</span>
+                 <span style="color: #a0a0a0; font-size: 0.95rem; font-weight: 400;">Need a specialized security detail?</span>
+                 <a href="#contact" style="color: #fff; text-decoration: none; font-weight: 600; border-bottom: 1px solid #e5c158; padding-bottom: 2px; transition: color 0.3s;" onmouseover="this.style.color='#e5c158';" onmouseout="this.style.color='#fff';">Contact us for a bespoke security review &rarr;</a>
               </div>
            </div>
         </section>
 
-        <!-- Operation Lookbook Section -->
-        <section id="lookbook" style="padding: 100px 0; background: #0a0a0c; border-bottom: 1px solid rgba(255,255,255,0.03);">
+        <!-- Gallery Section -->
+        <section id="lookbook" style="padding: 120px 0; background: #0a0a0c; border-bottom: 1px solid rgba(255,255,255,0.03);">
            <div style="padding: 0 10%; margin-bottom: 60px;">
-              <h2 style="font-size: 3rem; font-weight: 200; letter-spacing: -1px;">Operational <span style="font-style: italic; font-family: 'Playfair Display', serif; color: #e5c158;">Assets.</span></h2>
+              <div style="color: #e5c158; font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 20px; font-weight: 600;">Visual Anthology</div>
+              <h2 style="font-size: 3.5rem; font-weight: 200; letter-spacing: -1px; margin: 0;">Uncompromising <span style="font-style: italic; font-family: 'Playfair Display', serif; color: #e5c158;">Excellence.</span></h2>
            </div>
            
-           <div style="display: flex; overflow-x: auto; gap: 30px; padding: 0 10% 40px 10%; scrollbar-width: none;">
-              <div class="lookbook-item" style="flex: 0 0 600px; height: 400px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); position: relative;">
-                 <img src="/assets/fleet_convoy_1769556157064.png" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s; filter: grayscale(100%);">
+           <style>
+             .bento-gallery { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 250px; gap: 20px; padding: 0 10%; }
+             .bento-item { position: relative; border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); cursor: pointer; transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease, border-color 0.4s ease; background: #111; }
+             .bento-item:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 20px 40px rgba(0,0,0,0.8); z-index: 10; border-color: rgba(229, 193, 88, 0.4); }
+             .bento-item img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) brightness(0.6); transition: transform 0.8s ease, filter 0.8s ease; }
+             .bento-item:hover img { transform: scale(1.08); filter: grayscale(0%) brightness(1); }
+             
+             .bento-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,10,12,0.95) 0%, rgba(10,10,12,0.1) 60%, transparent 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 30px; opacity: 0; transition: opacity 0.4s ease; pointer-events: none; }
+             .bento-item:hover .bento-overlay { opacity: 1; }
+             
+             .bento-cat { color: #e5c158; font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 800; margin-bottom: 8px; transform: translateY(15px); opacity: 0; transition: all 0.4s ease 0.1s; }
+             .bento-title { color: #fff; font-size: 1.5rem; font-weight: 300; line-height: 1.2; transform: translateY(15px); opacity: 0; transition: all 0.4s ease 0.2s; margin: 0; }
+             .bento-item:hover .bento-cat, .bento-item:hover .bento-title { transform: translateY(0); opacity: 1; }
+
+             /* Desktop Layout Placements */
+             .item-1 { grid-column: span 2; grid-row: span 2; } /* Large feature */
+             .item-2 { grid-column: span 2; grid-row: span 1; } /* Wide top right */
+             .item-3 { grid-column: span 1; grid-row: span 1; } /* Normal right */
+             .item-4 { grid-column: span 1; grid-row: span 1; } /* Normal far right */
+             .item-5 { grid-column: span 2; grid-row: span 1; } /* Wide bottom left */
+             .item-6 { grid-column: span 2; grid-row: span 1; } /* Wide bottom right */
+             
+             /* Responsive Mobile Layout */
+             @media (max-width: 1024px) {
+                .bento-gallery { grid-template-columns: repeat(2, 1fr); gap: 15px; grid-auto-rows: 240px; padding: 0 5%; }
+                .item-1 { grid-column: span 2; grid-row: span 2; }
+                .item-2 { grid-column: span 2; grid-row: span 1; }
+                .item-3 { grid-column: span 1; grid-row: span 1; }
+                .item-4 { grid-column: span 1; grid-row: span 1; }
+                .item-5 { grid-column: span 2; grid-row: span 1; }
+                .item-6 { grid-column: span 2; grid-row: span 1; }
+             }
+             @media (max-width: 768px) {
+                /* Interactive Scroll Feed on Mobile */
+                .bento-gallery { display: flex; flex-direction: column; gap: 20px; padding: 0 5%; }
+                .bento-item { height: 350px; border-radius: 12px; }
+                .bento-overlay { opacity: 1; background: linear-gradient(to top, rgba(10,10,12,0.95) 0%, rgba(10,10,12,0.3) 100%); }
+                .bento-cat, .bento-title { transform: translateY(0); opacity: 1; }
+                .bento-item img { filter: grayscale(50%) brightness(0.8); }
+                
+                /* Active tap/scroll state for mobile */
+                .bento-item.mobile-active { border-color: rgba(229, 193, 88, 0.8); transform: scale(1.02); }
+                .bento-item.mobile-active img { filter: grayscale(0%) brightness(1); }
+             }
+           </style>
+
+           <div class="bento-gallery" id="interactive-bento">
+              <div class="bento-item item-1">
+                 <img src="/assets/mcso_patrol_car.jpg" alt="Patrol Vehicle">
+                 <div class="bento-overlay">
+                    <div class="bento-cat">Presence</div>
+                    <h3 class="bento-title">High-Visibility Patrol Units</h3>
+                 </div>
               </div>
-              <div class="lookbook-item" style="flex: 0 0 400px; height: 400px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); position: relative;">
-                 <img src="/assets/about_navy_1769556364610.png" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s; filter: grayscale(100%);">
+              <div class="bento-item item-2">
+                 <img src="/assets/fleet_convoy_1769556157064.png" alt="Fleet Convoy">
+                 <div class="bento-overlay">
+                    <div class="bento-cat">Logistics</div>
+                    <h3 class="bento-title">Tactical Convoy Control</h3>
+                 </div>
               </div>
-              <div class="lookbook-item" style="flex: 0 0 600px; height: 400px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); position: relative;">
-                 <img src="/assets/fleet_suv_front_1769556132620.png" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s; filter: grayscale(100%);">
+              <div class="bento-item item-3">
+                 <img src="/assets/about_navy_1769556364610.png" alt="Navy Veteran">
+                 <div class="bento-overlay">
+                    <div class="bento-cat">Foundation</div>
+                    <h3 class="bento-title">Military Precision</h3>
+                 </div>
+              </div>
+              <div class="bento-item item-4">
+                 <img src="/assets/about_nypd_1769556377163.png" alt="NYPD Veteran">
+                 <div class="bento-overlay">
+                    <div class="bento-cat">Experience</div>
+                    <h3 class="bento-title">Law Enforcement Pedigree</h3>
+                 </div>
+              </div>
+              <div class="bento-item item-5">
+                 <img src="/assets/fleet_sedan_side_1769556143358.png" alt="Executive Sedan">
+                 <div class="bento-overlay">
+                    <div class="bento-cat">Transport</div>
+                    <h3 class="bento-title">Discreet VIP Transport</h3>
+                 </div>
+              </div>
+              <div class="bento-item item-6">
+                 <img src="/assets/fleet_suv_front_1769556132620.png" alt="Command SUV">
+                 <div class="bento-overlay">
+                    <div class="bento-cat">Command</div>
+                    <h3 class="bento-title">Mobile Command Assets</h3>
+                 </div>
               </div>
            </div>
+
+           <script>
+             // Mobile Interactivity: Tap to highlight or scroll to highlight
+             setTimeout(() => {
+                if (window.innerWidth <= 768) {
+                   const gallery = document.getElementById('interactive-bento');
+                   const frames = gallery.querySelectorAll('.bento-item');
+                   
+                   // Tap to toggle full color and border interactions
+                   frames.forEach(frame => {
+                      frame.addEventListener('click', () => {
+                         frames.forEach(f => f.classList.remove('mobile-active'));
+                         frame.classList.add('mobile-active');
+                      });
+                   });
+
+                   // Automatically highlight center item on scroll
+                   const bObserver = new IntersectionObserver((entries) => {
+                      entries.forEach(entry => {
+                         if (entry.isIntersecting) {
+                            frames.forEach(f => f.classList.remove('mobile-active'));
+                            entry.target.classList.add('mobile-active');
+                         }
+                      });
+                   }, { rootMargin: '-40% 0px -40% 0px', threshold: 0.1 });
+                   
+                   frames.forEach(f => bObserver.observe(f));
+                }
+             }, 500);
+           </script>
         </section>
 
         <!-- Contact Section -->
