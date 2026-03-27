@@ -43,10 +43,7 @@ export function renderLight(root) {
             .nav-link.active { opacity: 1 !important; color: #c9a53d !important; }
             .nav-link.active::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 100%; height: 1px; background: #c9a53d; }
             
-            .floating-cta { position: fixed; bottom: 40px; right: 40px; z-index: 999; width: 60px; height: 60px; background: #c9a53d; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); overflow: hidden; }
-            .floating-cta:hover { width: 220px; border-radius: 30px; }
-            .cta-text { white-space: nowrap; opacity: 0; margin-left: 10px; font-weight: 800; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: #ffffff; transition: opacity 0.2s; pointer-events: none; }
-            .floating-cta:hover .cta-text { opacity: 1; }
+
 
             .mobile-only { display: none; }
             
@@ -116,19 +113,11 @@ export function renderLight(root) {
                 }
              </style>
 
-             <div class="about-grid-res">
-                
-                <div class="legacy-img-wrapper">
-                   <img src="/assets/about_nypd_1769556377163.png" alt="NYPD Experience" style="min-height: 500px; object-fit: cover; filter: contrast(1.05) brightness(1);">
-                   <div class="img-overlay-box">
-                      <div style="font-size: 1.1rem; font-weight: 300; font-style: italic; color: #0a0a0c; margin-bottom: 5px;">"Experience drives</div>
-                      <div style="font-size: 1.1rem; font-weight: 300; font-style: italic; color: #c9a53d;">measurable results."</div>
-                   </div>
-                </div>
+               <div style="max-width: 800px; margin: 0 auto; text-align: center;">
                 
                <div>
                    <h2 style="font-size: 3.5rem; font-weight: 200; line-height: 1.1; margin-bottom: 35px; letter-spacing: -1.5px; color: #0a0a0c;">Meet The Owner, <br /><span style="font-style: italic; font-family: 'Playfair Display', serif; color: #c9a53d; font-weight: 400;">Michael Colon.</span></h2>
-                   <div style="font-size: 1.05rem; color: #444; line-height: 1.8; margin-bottom: 30px; font-weight: 300; display: flex; flex-direction: column; gap: 35px;">
+                   <div style="font-size: 1.05rem; color: #444; line-height: 1.8; margin-bottom: 30px; font-weight: 300; display: flex; flex-direction: column; gap: 35px; text-align: left;">
                       <div>
                          <div style="color: #c9a53d; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; margin-bottom: 15px; opacity: 0.8;">Early Foundations & Service</div>
                          <p style="margin: 0;">Michael Colon was born in Brooklyn, NY and came from humble beginnings. After enlisting at 19 years old and honorably serving our country in United States Navy, Michael had his professional trajectory in focus starting his career in high profile Executive Protection. However, Michael did not stop there as he had always had a calling for service.</p>
@@ -150,7 +139,7 @@ export function renderLight(root) {
                       </div>
                    </div>
 
-                   <div style="margin-top: 50px; padding: 40px; border-left: 2px solid #c9a53d; background: rgba(201,165,61,0.03);">
+                   <div style="margin-top: 50px; padding: 40px; border-left: 2px solid #c9a53d; background: rgba(201,165,61,0.03); text-align: left;">
                       <p style="font-size: 1.4rem; color: #0a0a0c; font-style: italic; font-family: 'Playfair Display', serif; line-height: 1.6; margin: 0;">
                          “Be the example, stand by your word and keep your promises to your employees, partners and clients.”
                       </p>
@@ -360,13 +349,7 @@ export function renderLight(root) {
         </section>
       </main>
 
-      <!-- Floating CTA -->
-      <div class="floating-cta" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
-          <div style="color: #ffffff; display: flex; align-items: center; justify-content: center;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-          </div>
-         <span class="cta-text">Contact Us</span>
-      </div>
+
 
       <footer style="padding: 100px 10% 60px 10%; border-top: 1px solid rgba(0,0,0,0.03); background: #ffffff; text-align: center;">
          <div style="margin-bottom: 30px; display: flex; justify-content: center;">
