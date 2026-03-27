@@ -6,236 +6,238 @@ export function renderMidnight(root) {
       <div id="scroll-progress" style="position: fixed; top: 0; left: 0; height: 3px; background: #e5c158; width: 0%; z-index: 1001; transition: width 0.1s;"></div>
 
       <!-- Minimal Sticky Header -->
-      <header style="padding: 30px 60px; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; box-sizing: border-box; z-index: 1000; background: rgba(10, 10, 12, 0.8); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
-        <div style="font-size: 1.4rem; font-weight: 300; letter-spacing: 5px; text-transform: uppercase; cursor: pointer;" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-          MCSO
+      <header id="main-header" style="padding: 20px 60px; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; box-sizing: border-box; z-index: 2000; background: rgba(10, 10, 12, 0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.3s ease;">
+        <div style="cursor: pointer; width: 130px; height: 130px; display: flex; align-items: center;" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+          <img src="/assets/mcso_logo_lion.png" alt="MCSO Logo" style="width: 100%; height: 100%; object-fit: contain;">
         </div>
-        <nav id="main-nav" style="display: flex; gap: 40px; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 500;">
+        
+        <nav id="main-nav" class="desktop-nav" style="display: flex; gap: 40px; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; align-items: center;">
           <a href="#about" class="nav-link" style="color: #fff; text-decoration: none; opacity: 0.6; transition: all 0.3s; position: relative;">The Owner</a>
           <a href="#pathways" class="nav-link" style="color: #fff; text-decoration: none; opacity: 0.6; transition: all 0.3s; position: relative;">Services</a>
           <a href="#lookbook" class="nav-link" style="color: #fff; text-decoration: none; opacity: 0.6; transition: all 0.3s; position: relative;">Gallery</a>
-          <a href="#contact" class="nav-link" style="color: #e5c158; text-decoration: none; border: 1px solid #e5c158; padding: 10px 25px; border-radius: 2px; margin-top: -8px; transition: all 0.3s;">Consultation</a>
+          <a href="#contact" class="nav-link" style="color: #e5c158; text-decoration: none; border: 1px solid #e5c158; padding: 12px 30px; border-radius: 2px; transition: all 0.3s;">Consultation</a>
         </nav>
+
+        <div id="mobile-menu-toggle" class="mobile-only" style="cursor: pointer; padding: 10px; z-index: 2001;">
+           <div class="bar1" style="width: 28px; height: 2px; background: #e5c158; margin-bottom: 6px; transition: 0.4s;"></div>
+           <div class="bar2" style="width: 28px; height: 2px; background: #e5c158; margin-bottom: 6px; transition: 0.4s;"></div>
+           <div class="bar3" style="width: 28px; height: 2px; background: #e5c158; transition: 0.4s;"></div>
+        </div>
       </header>
+
+      <!-- Mobile Nav Screen -->
+      <div id="mobile-nav-screen" style="position: fixed; inset: 0; background: rgba(10,10,12,0.98); z-index: 1999; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 40px; transform: translateY(-100%); transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); backdrop-filter: blur(20px); opacity: 0;">
+         <a href="#about" class="mobile-nav-link" style="color: #fff; text-decoration: none; font-size: 1.5rem; letter-spacing: 4px; text-transform: uppercase; opacity: 0; transform: translateY(20px); transition: all 0.4s ease 0.1s;">The Owner</a>
+         <a href="#pathways" class="mobile-nav-link" style="color: #fff; text-decoration: none; font-size: 1.5rem; letter-spacing: 4px; text-transform: uppercase; opacity: 0; transform: translateY(20px); transition: all 0.4s ease 0.2s;">Services</a>
+         <a href="#lookbook" class="mobile-nav-link" style="color: #fff; text-decoration: none; font-size: 1.5rem; letter-spacing: 4px; text-transform: uppercase; opacity: 0; transform: translateY(20px); transition: all 0.4s ease 0.3s;">Gallery</a>
+         <a href="#contact" class="mobile-nav-link" style="color: #e5c158; text-decoration: none; font-size: 1.5rem; letter-spacing: 4px; text-transform: uppercase; border: 1px solid #e5c158; padding: 15px 40px; margin-top: 20px; opacity: 0; transform: translateY(20px); transition: all 0.4s ease 0.4s;">Consultation</a>
+      </div>
 
       <main style="flex: 1;">
         <!-- Immersive Hero Section -->
         <section id="hero" style="position: relative; height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-          <div style="position: absolute; inset: 0; background: url('/assets/mcso_patrol_car.jpg') center/cover; opacity: 0.25; filter: grayscale(100%); transition: transform 10s ease-out; transform: scale(1.1); animation: heroZoom 20s infinite alternate;"></div>
+          <div style="position: absolute; inset: 0; background: url('/assets/mcso_patrol_header.jpg') center/cover; opacity: 0.45; filter: contrast(1.1) brightness(0.85); transition: transform 10s ease-out; transform: scale(1.1); animation: heroZoom 20s infinite alternate;"></div>
           <style>
             @keyframes heroZoom { from { transform: scale(1.1); } to { transform: scale(1.2); } }
             @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
             .nav-link.active { opacity: 1 !important; color: #e5c158 !important; }
             .nav-link.active::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 100%; height: 1px; background: #e5c158; }
             
-            .service-card.active .service-drawer { max-height: 1200px; padding-top: 30px; }
-            .service-card.active .expand-icon { transform: rotate(45deg); }
-            
-            .impact-marker:hover { border-color: #e5c158 !important; background: rgba(229, 193, 88, 0.05) !important; }
-            
-            .pathway-card:hover { background: rgba(255,255,255,0.05) !important; border-color: #e5c158 !important; }
-            .pathway-card:hover h3 { color: #e5c158; }
-
             .floating-cta { position: fixed; bottom: 40px; right: 40px; z-index: 999; width: 60px; height: 60px; background: #e5c158; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); overflow: hidden; }
             .floating-cta:hover { width: 220px; border-radius: 30px; }
             .cta-text { white-space: nowrap; opacity: 0; margin-left: 10px; font-weight: 800; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: #0a0a0c; transition: opacity 0.2s; pointer-events: none; }
             .floating-cta:hover .cta-text { opacity: 1; }
+
+            .mobile-only { display: none; }
+            
+            @media (max-width: 1024px) {
+               .desktop-nav { display: none !important; }
+               .mobile-only { display: block; }
+               #main-header { padding: 15px 30px !important; }
+               h1 { font-size: 3.5rem !important; }
+            }
+            @media (max-width: 768px) {
+               h1 { font-size: 2.8rem !important; }
+               .hero-section-padding { padding: 0 20px !important; }
+               .consultation-grid { grid-template-columns: 1fr !important; gap: 40px !important; padding: 40px !important; }
+            }
           </style>
           
           <div style="position: absolute; inset: 0; background: radial-gradient(circle at center, rgba(10, 10, 12, 0.4) 0%, rgba(10, 10, 12, 1) 100%);"></div>
           
           <div style="position: relative; z-index: 2; text-align: center; padding: 0 40px; max-width: 1000px;">
             <div style="color: #e5c158; font-size: 0.8rem; letter-spacing: 6px; text-transform: uppercase; margin-bottom: 40px; font-weight: 600; opacity: 0; animation: fadeInUp 1s forwards 0.5s;">
-               Property Protection & Security Services
+               Professional Security Services
             </div>
             <h1 style="font-size: 5.5rem; font-weight: 200; line-height: 1; margin-bottom: 40px; letter-spacing: -3px; opacity: 0; animation: fadeInUp 1s forwards 0.8s;">
               The Standard of <br>
-              <span style="font-style: italic; font-family: 'Playfair Display', serif; color: #e5c158; font-weight: 400;">Elite Security.</span>
+              <span style="font-style: italic; font-family: 'Playfair Display', serif; color: #e5c158; font-weight: 400;">Professional Protection.</span>
             </h1>
             <p style="font-size: 1.25rem; color: #a0a0a0; line-height: 2; margin-bottom: 60px; font-weight: 300; max-width: 750px; margin-left: auto; margin-right: auto; opacity: 0; animation: fadeInUp 1s forwards 1.1s;">
-              Retired NYPD Lieutenant & Navy Veteran Owned. We fix the critical missing elements in private security through absolute attention to detail and unwavering client commitment.
+              Veteran-owned and operated. We provide comprehensive private security solutions built on reliability, detailed planning, and steadfast commitment to our clients.
             </p>
             <div style="opacity: 0; animation: fadeInUp 1s forwards 1.4s; display: flex; gap: 20px; justify-content: center;">
               <a href="#pathways" style="background: #e5c158; color: #0a0a0c; border: 1px solid #e5c158; padding: 22px 50px; font-size: 0.9rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 800; cursor: pointer; text-decoration: none; transition: all 0.4s ease; display: inline-block;">
-                Explore Sectors
+                View Services
               </a>
               <a href="#about" style="background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.2); padding: 22px 50px; font-size: 0.9rem; letter-spacing: 3px; text-transform: uppercase; cursor: pointer; text-decoration: none; transition: all 0.4s ease; display: inline-block;">
-                Watch The Legacy
+                About Us
               </a>
             </div>
           </div>
         </section>
 
-        <!-- Scannable Legacy Section -->
-        <section id="about" style="padding: 180px 10%; background: #0a0a0c; border-bottom: 1px solid rgba(255,255,255,0.03);">
-          <div style="max-width: 1200px; margin: 0 auto;">
-             <div style="color: #e5c158; font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 30px; font-weight: 600;">The Foundation</div>
-             <h2 style="font-size: 4rem; font-weight: 200; line-height: 1.1; margin-bottom: 80px; letter-spacing: -1px;">Scrutiny by <span style="font-style: italic; font-family: 'Playfair Display', serif; color: #e5c158;">Design.</span></h2>
-             
-             <!-- Impact Markers (Scannable Cards) -->
-             <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 100px;">
-                <div class="impact-marker" style="padding: 50px; border: 1px solid rgba(255,255,255,0.05); transition: all 0.4s; background: rgba(255,255,255,0.01);">
-                   <div style="font-size: 0.75rem; color: #e5c158; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px;">01 // US Navy</div>
-                   <h3 style="font-size: 1.8rem; font-weight: 300; margin-bottom: 20px;">Veteran Foundation</h3>
-                   <p style="color: #666; font-size: 0.95rem; line-height: 1.8;">Established the bedrock of discipline and global logistics at age 19.</p>
-                </div>
-                <div class="impact-marker" style="padding: 50px; border: 1px solid rgba(255,255,255,0.05); transition: all 0.4s; background: rgba(255,255,255,0.01);">
-                   <div style="font-size: 0.75rem; color: #e5c158; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px;">02 // NYPD Command</div>
-                   <h3 style="font-size: 1.8rem; font-weight: 300; margin-bottom: 20px;">Police Lieutenant</h3>
-                   <p style="color: #666; font-size: 0.95rem; line-height: 1.8;">Executive Officer for Aux patrol, Manhattan North's 23rd Precinct.</p>
-                </div>
-                <div class="impact-marker" style="padding: 50px; border: 1px solid rgba(255,255,255,0.05); transition: all 0.4s; background: rgba(255,255,255,0.01);">
-                   <div style="font-size: 0.75rem; color: #e5c158; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px;">03 // MCSO Era</div>
-                   <h3 style="font-size: 1.8rem; font-weight: 300; margin-bottom: 20px;">Private Principal</h3>
-                   <p style="color: #666; font-size: 0.95rem; line-height: 1.8;">Founded in 2022 to fix the service gap in elite private protection.</p>
-                </div>
+        <!-- Scannable Legacy Section (Redesigned) -->
+        <section id="about" style="padding: 150px 10%; background: linear-gradient(180deg, #0a0a0c 0%, #0d0d10 100%); position: relative; overflow: hidden;">
+          <!-- decorative blur element -->
+          <div style="position: absolute; top: -10%; left: -5%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(229,193,88,0.03) 0%, transparent 60%); filter: blur(60px); pointer-events: none;"></div>
+          
+          <div style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 2;">
+             <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 70px;">
+                <div style="height: 1px; width: 60px; background: rgba(229,193,88,0.5);"></div>
+                <div style="color: #e5c158; font-size: 0.75rem; letter-spacing: 5px; text-transform: uppercase; font-weight: 700;">The Legacy</div>
              </div>
+             
+             <style>
+                .about-grid-res { display: grid; grid-template-columns: 1fr 1.3fr; gap: 100px; align-items: center; }
+                .legacy-card { background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.03); border-radius: 8px; padding: 35px; transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); cursor: pointer; position: relative; overflow: hidden; }
+                .legacy-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(229,193,88,0.05) 0%, transparent 100%); opacity: 0; transition: opacity 0.5s ease; }
+                .legacy-card:hover { transform: translateX(10px); border-color: rgba(229,193,88,0.3); background: rgba(255,255,255,0.03); }
+                .legacy-card:hover::before { opacity: 1; }
+                .legacy-card-number { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: rgba(229,193,88,0.2); position: absolute; top: 20px; right: 25px; transition: all 0.5s ease; }
+                .legacy-card:hover .legacy-card-number { color: rgba(229,193,88,0.8); transform: scale(1.1); }
+                .legacy-img-wrapper { position: relative; overflow: hidden; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); }
+                .legacy-img-wrapper img { width: 100%; height: auto; display: block; filter: grayscale(100%) brightness(0.7); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+                .legacy-img-wrapper:hover img { filter: grayscale(0%) brightness(1); transform: scale(1.05); }
+                .img-overlay-box { position: absolute; bottom: -20px; right: -20px; background: #0a0a0c; padding: 25px 35px; border-top-left-radius: 8px; border-top: 1px solid rgba(229,193,88,0.2); border-left: 1px solid rgba(229,193,88,0.2); backdrop-filter: blur(10px); transition: transform 0.5s ease; }
+                .legacy-img-wrapper:hover .img-overlay-box { transform: translate(-10px, -10px); }
+                
+                @media (max-width: 1024px) {
+                   .about-grid-res { grid-template-columns: 1fr; gap: 60px; }
+                   .img-overlay-box { bottom: 0; right: 0; }
+                }
+             </style>
 
-             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: flex-start;">
-                <div style="position: relative;">
-                   <div style="background: url('/assets/about_nypd_1769556377163.png') center/cover; height: 600px; filter: grayscale(100%) contrast(1.1); border: 1px solid rgba(255,255,255,0.1);"></div>
-                   <div style="position: absolute; bottom: -30px; right: -30px; background: #e5c158; padding: 40px; color: #0a0a0c; max-width: 300px; font-weight: 800; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase;">
-                      "Be the example, stand by your word and keep your promises."
+             <div class="about-grid-res">
+                
+                <div class="legacy-img-wrapper">
+                   <img src="/assets/about_nypd_1769556377163.png" alt="NYPD Experience" style="min-height: 500px; object-fit: cover;">
+                   <div class="img-overlay-box">
+                      <div style="font-size: 1.1rem; font-weight: 300; font-style: italic; color: #fff; margin-bottom: 5px;">"Experience drives</div>
+                      <div style="font-size: 1.1rem; font-weight: 300; font-style: italic; color: #e5c158;">measurable results."</div>
                    </div>
                 </div>
-                <div style="padding-top: 40px;">
-                   <p style="font-size: 1.2rem; color: #888; line-height: 2; margin-bottom: 40px; font-weight: 300;">
-                      Michael Colon's professional trajectory focuses on high-profile Executive Protection. His unique background—spanning the United States Navy and the NYPD's Aux Division—provides a dual-lens of military discipline and strategic law enforcement command.
-                   </p>
-                   <p style="font-size: 1.2rem; color: #888; line-height: 2; margin-bottom: 40px; font-weight: 300;">
-                      After years managing 33-armed security officers for high-end residential communities and retail corporate campuses, Michael recognized the critical missing elements in today's private security market: **Attention to detail** and **Elite Client Service**.
-                   </p>
+                
+               <div>
+                   <h2 style="font-size: 3.5rem; font-weight: 200; line-height: 1.1; margin-bottom: 35px; letter-spacing: -1.5px;">Meet The Owner, <br /><span style="font-style: italic; font-family: 'Playfair Display', serif; color: #e5c158; font-weight: 400;">Michael Colon.</span></h2>
+                   <div style="font-size: 1.05rem; color: #aaa; line-height: 1.8; margin-bottom: 30px; font-weight: 300; display: flex; flex-direction: column; gap: 35px;">
+                      <div>
+                         <div style="color: #e5c158; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; margin-bottom: 15px; opacity: 0.8;">Early Foundations & Service</div>
+                         <p style="margin: 0;">Michael Colon was born in Brooklyn, NY and came from humble beginnings. After enlisting at 19 years old and honorably serving our country in United States Navy, Michael had his professional trajectory in focus starting his career in high profile Executive Protection. However, Michael did not stop there as he had always had a calling for service.</p>
+                      </div>
+                      
+                      <div>
+                         <div style="color: #e5c158; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; margin-bottom: 15px; opacity: 0.8;">Law Enforcement Leadership</div>
+                         <p style="margin: 0;">At 36 years old, Michael Joined the New York City Police Department's Aux Division. Michael seen by his superiors as a natural born leader, was shortly there after promoted him to the rank of sergeant then lieutenant. As the Executive officer in charge, Michael was assigned to oversee the all-aux patrol officers of Manhattan North’s 23rd Precinct. After working for several years in law enforcement and the high-end luxury goods private security industries, Michael moved to South Florida where he accepted a position as a security manager at a major retailer corporate campus.</p>
+                      </div>
+                      
+                      <div>
+                         <div style="color: #e5c158; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; margin-bottom: 15px; opacity: 0.8;">Strategic Management</div>
+                         <p style="margin: 0;">Michael, after his ten-year, accepted a position as an executive security manager at a high-end residential community. As Michael was in charge of 33-armed security officers as well as onsite medical personnel, It was here where he really dug deep, researched and analyzed what was missing, overlooked and truly needed in today’s private security market.</p>
+                      </div>
+                      
+                      <div>
+                         <div style="color: #e5c158; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; margin-bottom: 15px; opacity: 0.8;">A Vision for Excellence</div>
+                         <p style="margin: 0;">In 2022, Michael decided to go on his own and open his own private security company. Michael did so only after seeing what are critical several missing elements in today's private security industry which include attention to detail as well as giving great client service. Michael Colon has set the standard exceeding any and all client expectations in both the residential and commercial environments.</p>
+                      </div>
+                   </div>
+
+                   <div style="margin-top: 50px; padding: 40px; border-left: 2px solid #e5c158; background: rgba(229,193,88,0.03);">
+                      <p style="font-size: 1.4rem; color: #fff; font-style: italic; font-family: 'Playfair Display', serif; line-height: 1.6; margin: 0;">
+                         “Be the example, stand by your word and keep your promises to your employees, partners and clients.”
+                      </p>
+                   </div>
                 </div>
              </div>
           </div>
         </section>
 
-        <!-- Directional Pathways Entry -->
-        <section id="pathways" style="padding: 180px 10%; background: #0d0d0f; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.03);">
-           <div style="max-width: 800px; margin: 0 auto 100px auto;">
-              <div style="color: #e5c158; font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 30px; font-weight: 600;">Service Selector</div>
-              <h2 style="font-size: 4rem; font-weight: 200; line-height: 1.1; margin-bottom: 40px; letter-spacing: -1px;">Tailored <span style="font-style: italic; font-family: 'Playfair Display', serif; color: #e5c158;">Access.</span></h2>
-              <p style="font-size: 1.15rem; color: #666; line-height: 1.8; font-weight: 400;">Select the pathway that aligns with your specific protection requirements.</p>
-           </div>
-           
-           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 1200px; margin: 0 auto;">
-              <!-- Pathway: Private -->
-              <div class="pathway-card" style="padding: 80px 40px; border: 1px solid rgba(255,255,255,0.05); background: rgba(255,255,255,0.01); transition: all 0.4s; cursor: pointer; text-align: left;" onclick="document.getElementById('residential-anchor').scrollIntoView({behavior: 'smooth'})">
-                 <div style="font-size: 0.75rem; color: #e5c158; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 30px; font-weight: 600;">Personal // High-Net-Worth</div>
-                 <h3 style="font-size: 2.5rem; font-weight: 300; margin-bottom: 30px; transition: color 0.3s;">Private Principal</h3>
-                 <p style="color: #666; line-height: 1.8; margin-bottom: 40px; font-size: 1.1rem;">Bespoke residential protection, close-quarter body guarding, and family sanctuary governance.</p>
-                 <div style="font-size: 0.8rem; font-weight: 800; color: #e5c158; letter-spacing: 2px;">SECURE THE PERIMETER &rarr;</div>
+        <!-- Services Section -->
+        <section id="pathways" style="padding: 150px 10%; background: #0d0d0f; border-top: 1px solid rgba(255,255,255,0.03);">
+           <div style="max-width: 1400px; margin: 0 auto;">
+              <div style="text-align: center; margin-bottom: 80px;">
+                 <div style="color: #e5c158; font-size: 0.8rem; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 20px; font-weight: 600;">Security Solutions</div>
+                 <h2 style="font-size: 3.5rem; font-weight: 200; line-height: 1.1; margin-bottom: 30px; letter-spacing: -1px;">Our Security <span style="font-style: italic; font-family: 'Playfair Display', serif; color: #e5c158;">Services.</span></h2>
+                 <p style="font-size: 1.1rem; color: #888; max-width: 700px; margin: 0 auto; font-weight: 300; line-height: 1.8;">
+                    At MCSO, we offer a wide variety of security service, custom tailored to fit your specific needs.
+                 </p>
               </div>
-              <!-- Pathway: Corporate -->
-              <div class="pathway-card" style="padding: 80px 40px; border: 1px solid rgba(255,255,255,0.05); background: rgba(255,255,255,0.01); transition: all 0.4s; cursor: pointer; text-align: left;" onclick="document.getElementById('commercial-anchor').scrollIntoView({behavior: 'smooth'})">
-                 <div style="font-size: 0.75rem; color: #e5c158; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 30px; font-weight: 600;">Retail // Institutional // Enterprise</div>
-                 <h3 style="font-size: 2.5rem; font-weight: 300; margin-bottom: 30px; transition: color 0.3s;">Corporate Asset</h3>
-                 <p style="color: #666; line-height: 1.8; margin-bottom: 40px; font-size: 1.1rem;">Securing corporate campuses, high-end retail, financial institutions, and specialized logistics.</p>
-                 <div style="font-size: 0.8rem; font-weight: 800; color: #e5c158; letter-spacing: 2px;">ESTABLISH SITE CONTROL &rarr;</div>
-              </div>
-           </div>
-        </section>
 
-        <!-- Services Section CTA-esque -->
-        <section id="services" style="padding: 180px 10%; background: #0a0a0c;">
-           <div style="text-align: center; margin-bottom: 80px;">
-              <h2 style="font-size: 4rem; font-weight: 200; line-height: 1.1; margin-bottom: 30px; letter-spacing: -1px;">Core <span style="font-style: italic; font-family: 'Playfair Display', serif; color: #e5c158;">Capabilities.</span></h2>
-              <p style="font-size: 1.15rem; color: #666; max-width: 600px; margin: 0 auto;">Direct, elite solutions tailored for principal safety and asset protection.</p>
-           </div>
-           
-           <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 1400px; margin: 0 auto;">
-              
-              <!-- Private Principal Security -->
-              <div id="residential-anchor" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; overflow: hidden; transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-10px)'; this.style.borderColor='#e5c158';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(255,255,255,0.05)';">
-                 <div style="height: 300px; background: url('/assets/fleet_suv_front_1769556132620.png') center/cover; filter: grayscale(100%); position: relative;">
-                    <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,10,12,1) 0%, transparent 100%);"></div>
-                    <div style="position: absolute; bottom: 30px; left: 40px; display: flex; align-items: center; gap: 20px;">
-                       <div style="font-size: 1.5rem; font-weight: 900; color: #e5c158; letter-spacing: 2px;">RPP</div>
-                       <h3 style="font-size: 1.8rem; font-weight: 200; color: #fff; margin: 0;">Residential</h3>
+              <style>
+                 .capabilities-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+                 @media (max-width: 1024px) {
+                    .capabilities-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+                 }
+                 @media (max-width: 768px) {
+                    .capabilities-grid { grid-template-columns: 1fr; gap: 20px; }
+                 }
+              </style>
+              <div class="capabilities-grid">
+                 <!-- Service: Personal Detal -->
+                 <div style="position: relative; border: 1px solid rgba(255,255,255,0.05); border-radius: 4px; overflow: hidden; cursor: pointer; transition: all 0.4s ease; background: #111; height: 500px;" class="capability-card">
+                    <div style="position: absolute; inset: 0; background: url('/assets/fleet_sedan_side_1769556143358.png') center/cover; filter: grayscale(100%) opacity(0.5); transition: all 0.5s ease;" class="card-bg"></div>
+                    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(13,13,15,0) 0%, rgba(13,13,15,1) 85%); padding: 40px; display: flex; flex-direction: column; justify-content: flex-end; z-index: 2;">
+                       <h3 style="font-size: 1.8rem; font-weight: 300; margin: 0 0 15px 0; color: #fff; line-height: 1.2;">Security Escorts /<br/>Bodyguard services</h3>
+                       <p style="color: #888; font-size: 0.95rem; line-height: 1.6; margin: 0;">At MCSO We offer close quarter one on one executive protection, Body guarding services. Our clients range from executive professionals, to celebrities' to folks who might be receiving workplace or personal threats.</p>
                     </div>
                  </div>
-                 <div style="padding: 40px; display: flex; flex-direction: column; flex: 1;">
-                    <p style="color: #888; line-height: 1.8; font-size: 1.1rem; margin-bottom: 30px; flex: 1;">
-                       Close-quarter, one-on-one executive protection. We ensure your residence remains a sanctuary of peace for your family.
-                    </p>
-                    <ul style="list-style: none; padding: 0; margin: 0 0 40px 0; color: #a0a0a0; font-size: 0.95rem; line-height: 2;">
-                       <li><span style="color: #e5c158; margin-right: 10px;">•</span> Executive Professionals</li>
-                       <li><span style="color: #e5c158; margin-right: 10px;">•</span> High-Net-Worth Individuals</li>
-                       <li><span style="color: #e5c158; margin-right: 10px;">•</span> Personal Threat Mitigation</li>
-                    </ul>
-                    <a href="#contact" style="background: transparent; color: #e5c158; border: 1px solid #e5c158; padding: 18px 0; text-align: center; font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 800; cursor: pointer; text-decoration: none; transition: all 0.3s;" onmouseover="this.style.background='#e5c158'; this.style.color='#0a0a0c';" onmouseout="this.style.background='transparent'; this.style.color='#e5c158';">
-                       Secure Perimeter
-                    </a>
-                 </div>
-              </div>
 
-              <!-- Personal Security Detail -->
-              <div id="personal-anchor" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; overflow: hidden; transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-10px)'; this.style.borderColor='#e5c158';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(255,255,255,0.05)';">
-                 <div style="height: 300px; background: url('/assets/fleet_sedan_side_1769556143358.png') center/cover; filter: grayscale(100%); position: relative;">
-                    <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,10,12,1) 0%, transparent 100%);"></div>
-                    <div style="position: absolute; bottom: 30px; left: 40px; display: flex; align-items: center; gap: 20px;">
-                       <div style="font-size: 1.5rem; font-weight: 900; color: #e5c158; letter-spacing: 2px;">PSD</div>
-                       <h3 style="font-size: 1.8rem; font-weight: 200; color: #fff; margin: 0;">Personal Detail</h3>
+                 <!-- Service: Residential -->
+                 <div style="position: relative; border: 1px solid rgba(255,255,255,0.05); border-radius: 4px; overflow: hidden; cursor: pointer; transition: all 0.4s ease; background: #111; height: 500px;" class="capability-card">
+                    <div style="position: absolute; inset: 0; background: url('/assets/fleet_suv_front_1769556132620.png') center/cover; filter: grayscale(100%) opacity(0.5); transition: all 0.5s ease;" class="card-bg"></div>
+                    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(13,13,15,0) 0%, rgba(13,13,15,1) 85%); padding: 40px; display: flex; flex-direction: column; justify-content: flex-end; z-index: 2;">
+                       <h3 style="font-size: 1.8rem; font-weight: 300; margin: 0 0 15px 0; color: #fff;">Residential property protection</h3>
+                       <p style="color: #888; font-size: 0.95rem; line-height: 1.6; margin: 0;">Our highly trained and residential security experienced officers will promote the attention to detail and exceptional drive to ensure your residents peace of mind while on their property and in their homes.</p>
                     </div>
                  </div>
-                 <div style="padding: 40px; display: flex; flex-direction: column; flex: 1;">
-                    <p style="color: #888; line-height: 1.8; font-size: 1.1rem; margin-bottom: 30px; flex: 1;">
-                       Discreet, mobile protection forces providing absolute security for high-risk transits and public appearances.
-                    </p>
-                    <ul style="list-style: none; padding: 0; margin: 0 0 40px 0; color: #a0a0a0; font-size: 0.95rem; line-height: 2;">
-                       <li><span style="color: #e5c158; margin-right: 10px;">•</span> Advance Team Routing</li>
-                       <li><span style="color: #e5c158; margin-right: 10px;">•</span> Close-Protection Escorts</li>
-                       <li><span style="color: #e5c158; margin-right: 10px;">•</span> Secure Tactics</li>
-                    </ul>
-                    <a href="#contact" style="background: transparent; color: #e5c158; border: 1px solid #e5c158; padding: 18px 0; text-align: center; font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 800; cursor: pointer; text-decoration: none; transition: all 0.3s;" onmouseover="this.style.background='#e5c158'; this.style.color='#0a0a0c';" onmouseout="this.style.background='transparent'; this.style.color='#e5c158';">
-                       Deploy Unit
-                    </a>
-                 </div>
-              </div>
 
-              <!-- Corporate Asset Security -->
-              <div id="commercial-anchor" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; overflow: hidden; transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-10px)'; this.style.borderColor='#e5c158';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(255,255,255,0.05)';">
-                 <div style="height: 300px; background: url('/assets/fleet_convoy_1769556157064.png') center/cover; filter: grayscale(100%); position: relative;">
-                    <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,10,12,1) 0%, transparent 100%);"></div>
-                    <div style="position: absolute; bottom: 30px; left: 40px; display: flex; align-items: center; gap: 20px;">
-                       <div style="font-size: 1.5rem; font-weight: 900; color: #e5c158; letter-spacing: 2px;">CPC</div>
-                       <h3 style="font-size: 1.8rem; font-weight: 200; color: #fff; margin: 0;">Commercial Risk</h3>
+                 <!-- Service: Commercial -->
+                 <div style="position: relative; border: 1px solid rgba(255,255,255,0.05); border-radius: 4px; overflow: hidden; cursor: pointer; transition: all 0.4s ease; background: #111; height: 500px;" class="capability-card">
+                    <div style="position: absolute; inset: 0; background: url('/assets/fleet_convoy_1769556157064.png') center/cover; filter: grayscale(100%) opacity(0.5); transition: all 0.5s ease;" class="card-bg"></div>
+                    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(13,13,15,0) 0%, rgba(13,13,15,1) 85%); padding: 40px; display: flex; flex-direction: column; justify-content: flex-end; z-index: 2;">
+                       <h3 style="font-size: 1.8rem; font-weight: 300; margin: 0 0 15px 0; color: #fff;">Commercial property protection</h3>
+                       <p style="color: #888; font-size: 0.85rem; line-height: 1.5; margin: 0;">
+                          At the Michael Colon Security Organization, we understand the challenges and have the staff in place to address your company's concerns with respect to personnel safety as well as their overall safety in the work place. Having a physical security presence at your place of business and the ability to escort staff to their vehicles creates a sense of safety amongst your companies workforce as well as driving a overall positive perception. 
+                       </p>
+                       <div class="card-reveal" style="max-height: 0; overflow: hidden; transition: max-height 0.4s ease; margin-top: 0;">
+                          <ul style="list-style: none; padding: 15px 0 0 0; margin: 0; color: #e5c158; font-size: 0.75rem; display: grid; grid-template-columns: 1fr 1fr; gap: 5px; text-transform: uppercase; letter-spacing: 1px;">
+                             <li>Hospitals</li>
+                             <li>Schools</li>
+                             <li>College campuses</li>
+                             <li>Shopping Centers</li>
+                             <li>Corporate centers and offices</li>
+                             <li>Financial institutions</li>
+                             <li>High end luxury good establishments</li>
+                             <li>Currency-Bank drops/deposits</li>
+                          </ul>
+                       </div>
                     </div>
                  </div>
-                 <div style="padding: 40px; display: flex; flex-direction: column; flex: 1;">
-                    <p style="color: #888; line-height: 1.8; font-size: 1.1rem; margin-bottom: 30px; flex: 1;">
-                       Physical presence at your business that drives safety and positive perception. Complete oversight and incident prevention.
-                    </p>
-                    <ul style="list-style: none; padding: 0; margin: 0 0 40px 0; color: #a0a0a0; font-size: 0.95rem; line-height: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                       <li><span style="color: #e5c158; margin-right: 10px;">•</span> Corp Centers</li>
-                       <li><span style="color: #e5c158; margin-right: 10px;">•</span> Hospitals</li>
-                       <li><span style="color: #e5c158; margin-right: 10px;">•</span> Campuses</li>
-                       <li><span style="color: #e5c158; margin-right: 10px;">•</span> Financial Inst.</li>
-                       <li><span style="color: #e5c158; margin-right: 10px;">•</span> Luxury Retail</li>
-                       <li><span style="color: #e5c158; margin-right: 10px;">•</span> Retail</li>
-                    </ul>
-                    <a href="#contact" style="background: transparent; color: #e5c158; border: 1px solid #e5c158; padding: 18px 0; text-align: center; font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 800; cursor: pointer; text-decoration: none; transition: all 0.3s;" onmouseover="this.style.background='#e5c158'; this.style.color='#0a0a0c';" onmouseout="this.style.background='transparent'; this.style.color='#e5c158';">
-                       Establish Control
-                    </a>
-                 </div>
               </div>
 
-           </div>
-           
-           <div style="text-align: center; margin-top: 60px;">
-              <div style="display: inline-flex; align-items: center; gap: 15px; background: rgba(229, 193, 88, 0.05); border: 1px solid rgba(229, 193, 88, 0.2); padding: 15px 30px; border-radius: 4px;">
-                 <span style="color: #e5c158; font-weight: bold;">+</span>
-                 <span style="color: #a0a0a0; font-size: 0.95rem; font-weight: 400;">Need a specialized security detail?</span>
-                 <a href="#contact" style="color: #fff; text-decoration: none; font-weight: 600; border-bottom: 1px solid #e5c158; padding-bottom: 2px; transition: color 0.3s;" onmouseover="this.style.color='#e5c158';" onmouseout="this.style.color='#fff';">Contact us for a bespoke security review &rarr;</a>
-              </div>
+              <style>
+                 .capability-card:hover { border-color: rgba(229,193,88,0.5) !important; transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+                 .capability-card:hover .card-bg { filter: grayscale(0%) opacity(0.8) !important; transform: scale(1.05); }
+                 .capability-card:hover .card-reveal { max-height: 150px !important; }
+              </style>
            </div>
         </section>
 
         <!-- Gallery Section -->
         <section id="lookbook" style="padding: 120px 0; background: #0a0a0c; border-bottom: 1px solid rgba(255,255,255,0.03);">
            <div style="padding: 0 10%; margin-bottom: 60px;">
-              <div style="color: #e5c158; font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 20px; font-weight: 600;">Visual Anthology</div>
-              <h2 style="font-size: 3.5rem; font-weight: 200; letter-spacing: -1px; margin: 0;">Uncompromising <span style="font-style: italic; font-family: 'Playfair Display', serif; color: #e5c158;">Excellence.</span></h2>
+              <div style="color: #e5c158; font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 20px; font-weight: 600;">Operational Standards</div>
+              <h2 style="font-size: 3.5rem; font-weight: 200; letter-spacing: -1px; margin: 0;">Precision. <span style="font-style: italic; font-family: 'Playfair Display', serif; color: #e5c158;">Protection. Performance.</span></h2>
            </div>
            
            <style>
@@ -286,97 +288,79 @@ export function renderMidnight(root) {
 
            <div class="bento-gallery" id="interactive-bento">
               <div class="bento-item item-1">
-                 <img src="/assets/mcso_patrol_car.jpg" alt="Patrol Vehicle">
+                 <img src="/assets/mcso_patrol_header.jpg" alt="Patrol Vehicle">
                  <div class="bento-overlay">
-                    <div class="bento-cat">Presence</div>
-                    <h3 class="bento-title">High-Visibility Patrol Units</h3>
+                    <div class="bento-cat">Strategic Mobility</div>
+                    <h3 class="bento-title">Advanced Deployment Units</h3>
                  </div>
               </div>
               <div class="bento-item item-2">
                  <img src="/assets/fleet_convoy_1769556157064.png" alt="Fleet Convoy">
                  <div class="bento-overlay">
-                    <div class="bento-cat">Logistics</div>
-                    <h3 class="bento-title">Tactical Convoy Control</h3>
+                    <div class="bento-cat">Asset Readiness</div>
+                    <h3 class="bento-title">Integrated Fleet Solutions</h3>
                  </div>
               </div>
               <div class="bento-item item-3">
                  <img src="/assets/about_navy_1769556364610.png" alt="Navy Veteran">
                  <div class="bento-overlay">
-                    <div class="bento-cat">Foundation</div>
-                    <h3 class="bento-title">Military Precision</h3>
+                    <div class="bento-cat">Tactical Leadership</div>
+                    <h3 class="bento-title">Elite Operational Command</h3>
                  </div>
               </div>
               <div class="bento-item item-4">
                  <img src="/assets/about_nypd_1769556377163.png" alt="NYPD Veteran">
                  <div class="bento-overlay">
-                    <div class="bento-cat">Experience</div>
-                    <h3 class="bento-title">Law Enforcement Pedigree</h3>
+                    <div class="bento-cat">Proven Excellence</div>
+                    <h3 class="bento-title">Advanced Protection Strategies</h3>
                  </div>
               </div>
               <div class="bento-item item-5">
                  <img src="/assets/fleet_sedan_side_1769556143358.png" alt="Executive Sedan">
                  <div class="bento-overlay">
-                    <div class="bento-cat">Transport</div>
-                    <h3 class="bento-title">Discreet VIP Transport</h3>
+                    <div class="bento-cat">Secure Logistics</div>
+                    <h3 class="bento-title">Premium Client Transitions</h3>
                  </div>
               </div>
               <div class="bento-item item-6">
                  <img src="/assets/fleet_suv_front_1769556132620.png" alt="Command SUV">
                  <div class="bento-overlay">
-                    <div class="bento-cat">Command</div>
-                    <h3 class="bento-title">Mobile Command Assets</h3>
+                    <div class="bento-cat">Rapid Response</div>
+                    <h3 class="bento-title">Technical Support Units</h3>
                  </div>
               </div>
            </div>
 
-           <script>
-             // Mobile Interactivity: Tap to highlight or scroll to highlight
-             setTimeout(() => {
-                if (window.innerWidth <= 768) {
-                   const gallery = document.getElementById('interactive-bento');
-                   const frames = gallery.querySelectorAll('.bento-item');
-                   
-                   // Tap to toggle full color and border interactions
-                   frames.forEach(frame => {
-                      frame.addEventListener('click', () => {
-                         frames.forEach(f => f.classList.remove('mobile-active'));
-                         frame.classList.add('mobile-active');
-                      });
-                   });
-
-                   // Automatically highlight center item on scroll
-                   const bObserver = new IntersectionObserver((entries) => {
-                      entries.forEach(entry => {
-                         if (entry.isIntersecting) {
-                            frames.forEach(f => f.classList.remove('mobile-active'));
-                            entry.target.classList.add('mobile-active');
-                         }
-                      });
-                   }, { rootMargin: '-40% 0px -40% 0px', threshold: 0.1 });
-                   
-                   frames.forEach(f => bObserver.observe(f));
-                }
-             }, 500);
-           </script>
+           <!-- Gallery Interactivity Script Handled by Theme Logic -->
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" style="padding: 180px 10%; background: #0d0d0f; position: relative; overflow: hidden;">
-           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 120px; position: relative; z-index: 2;">
+        <!-- Consultation Section -->
+        <section id="contact" style="padding: 150px 10%; background: #08080a; position: relative;">
+           <div class="consultation-grid" style="max-width: 1100px; margin: 0 auto; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 4px; padding: 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px;">
               <div>
-                 <h2 style="font-size: 4.5rem; font-weight: 200; line-height: 1; margin-bottom: 40px; letter-spacing: -2px;">Secure <br><span style="font-style: italic; font-family: 'Playfair Display', serif; color: #e5c158; font-weight: 400;">Dialogue.</span></h2>
-                 <p style="font-size: 1.25rem; color: #666; line-height: 1.8; margin-bottom: 60px;">
-                    Contact Michael Colon for a free quote and professional security assessment.
+                 <div style="color: #e5c158; font-size: 0.8rem; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 20px; font-weight: 600;">Consultation</div>
+                 <h2 style="font-size: 3.5rem; font-weight: 200; line-height: 1.1; margin-bottom: 30px; letter-spacing: -2px;">Start Your <span style="font-style: italic; font-family: 'Playfair Display', serif; color: #e5c158;">Assessment.</span></h2>
+                 <p style="font-size: 1.05rem; color: #888; line-height: 1.8; margin-bottom: 50px; font-weight: 300;">
+                    Contact us today for a professional review of your security needs and a personalized protection plan.
                  </p>
-                 <div style="font-size: 2.2rem; font-weight: 300; color: #fff; margin-bottom: 20px;">561-722-2209</div>
-                 <div style="font-size: 1.2rem; color: #e5c158; letter-spacing: 4px; text-transform: uppercase;">Boynton Beach, FL</div>
+                 <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <div style="font-size: 2rem; font-weight: 300; color: #fff; letter-spacing: 1px;">561-722-2209</div>
+                    <div style="font-size: 0.9rem; color: #666; letter-spacing: 3px; text-transform: uppercase;">Boynton Beach, FL</div>
+                 </div>
               </div>
               
-              <div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.05); padding: 60px; border-radius: 4px;">
-                 <input type="text" placeholder="FULL NAME" style="width: 100%; background: transparent; border: none; border-bottom: 1px solid #333; color: #fff; padding: 20px 0; font-size: 0.9rem; margin-bottom: 40px; outline: none; letter-spacing: 2px;">
-                 <input type="email" placeholder="SECURE EMAIL" style="width: 100%; background: transparent; border: none; border-bottom: 1px solid #333; color: #fff; padding: 20px 0; font-size: 0.9rem; margin-bottom: 40px; outline: none; letter-spacing: 2px;">
-                 <textarea placeholder="INQUIRY DETAILS" style="width: 100%; background: transparent; border: none; border-bottom: 1px solid #333; color: #fff; padding: 20px 0; font-size: 0.9rem; margin-bottom: 60px; outline: none; height: 100px; resize: none; letter-spacing: 2px;"></textarea>
-                 <button style="width: 100%; background: #e5c158; color: #0a0a0c; border: none; padding: 25px; font-size: 0.9rem; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; cursor: pointer;">Submit Request</button>
+              <div style="display: flex; flex-direction: column; justify-content: center;">
+                 <style>
+                    .consult-input { width: 100%; background: transparent; border: none; border-bottom: 1px solid rgba(255,255,255,0.1); color: #fff; padding: 15px 0; font-size: 0.95rem; margin-bottom: 30px; outline: none; transition: border-color 0.3s; font-family: 'Inter', sans-serif; }
+                    .consult-input:focus { border-bottom-color: #e5c158; }
+                    .consult-btn { width: 100%; background: transparent; color: #e5c158; border: 1px solid #e5c158; padding: 20px; font-size: 0.85rem; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; cursor: pointer; transition: all 0.3s; }
+                    .consult-btn:hover { background: #e5c158; color: #0a0a0c; }
+                 </style>
+                 <input type="text" placeholder="Full Name" class="consult-input">
+                 <input type="email" placeholder="Email Address" class="consult-input">
+                 <input type="tel" placeholder="Phone Number" class="consult-input">
+                 <textarea placeholder="How can we help?" class="consult-input" style="height: 60px; resize: none;"></textarea>
+                 <button class="consult-btn">Submit Message</button>
               </div>
            </div>
         </section>
@@ -384,66 +368,64 @@ export function renderMidnight(root) {
 
       <!-- Floating CTA -->
       <div class="floating-cta" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
-         <div style="color: #0a0a0c; font-size: 1.5rem; font-weight: 900;">+</div>
-         <span class="cta-text">Rapid Consultation</span>
+          <div style="color: #0a0a0c; display: flex; align-items: center; justify-content: center;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          </div>
+         <span class="cta-text">Contact Us</span>
       </div>
 
-      <!-- Footer -->
-      <footer style="padding: 100px 10% 60px 10%; border-top: 1px solid rgba(255,255,255,0.03); background: #0a0a0c;">
-         <div style="font-size: 2.2rem; font-weight: 200; letter-spacing: 12px; margin-bottom: 30px;">MCSO</div>
+      <footer style="padding: 100px 10% 60px 10%; border-top: 1px solid rgba(255,255,255,0.03); background: #0a0a0c; text-align: center;">
+         <div style="margin-bottom: 30px; display: flex; justify-content: center;">
+            <img src="/assets/mcso_logo_lion.png" alt="MCSO Logo" style="width: 240px; height: 240px; object-fit: contain; opacity: 0.8;">
+         </div>
          <p style="color: #444; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;">Integrity // Trust // Honor // Respect</p>
          <p style="color: #222; font-size: 0.7rem; letter-spacing: 1px; margin-top: 40px;">&copy; 2026 MICHAEL COLON SECURITY ORGANIZATION LLC // US MILITARY VETERAN OWNED.</p>
       </footer>
 
-      <!-- Global Behavior & Interactions -->
-      <script>
-        // Setup Logic for In-Theme Interactivity
-        const initAura = () => {
-          const sections = document.querySelectorAll('section');
-          const navLinks = document.querySelectorAll('.nav-link');
-          const progressBar = document.getElementById('scroll-progress');
-
-          // 1. Progress Bar Logic
-          window.addEventListener('scroll', () => {
-            const windist = window.pageYOffset;
-            const docHeight = document.documentElement.scrollHeight;
-            const winHeight = window.innerHeight;
-            const scrollPercent = (windist / (docHeight - winHeight)) * 100;
-            progressBar.style.width = scrollPercent + '%';
-          });
-
-          // 2. Active Link Logic (Intersection Observer)
-          const observerOptions = {
-            threshold: 0.3
-          };
-
-          const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                navLinks.forEach(link => {
-                  link.classList.remove('active');
-                  if (link.getAttribute('href').substring(1) === entry.target.id) {
-                    link.classList.add('active');
-                  }
-                });
-              }
-            });
-          }, observerOptions);
-
-          sections.forEach(section => observer.observe(section));
-        };
-
-        // Inject the logic after a tick
-        setTimeout(initAura, 100);
-      </script>
+      <!-- Global Behavior & Interactions Handled by Theme Logic -->
     </div>
   `;
 
-   // Explicitly trigger the scroll logic since it's inside innerHTML
-   const setupScripts = () => {
+   const initAura = () => {
       const sections = root.querySelectorAll('section');
       const navLinks = root.querySelectorAll('.nav-link');
       const progressBar = root.querySelector('#scroll-progress');
+      const menuToggle = root.querySelector('#mobile-menu-toggle');
+      const navScreen = root.querySelector('#mobile-nav-screen');
+      const mobileLinks = root.querySelectorAll('.mobile-nav-link');
+      const bars = [root.querySelector('.bar1'), root.querySelector('.bar2'), root.querySelector('.bar3')];
+      
+      let menuOpen = false;
+      
+      const toggleMenu = () => {
+         menuOpen = !menuOpen;
+         if(menuOpen) {
+            navScreen.style.transform = 'translateY(0)';
+            navScreen.style.opacity = '1';
+            bars[0].style.transform = 'translateY(8px) rotate(45deg)';
+            bars[1].style.opacity = '0';
+            bars[2].style.transform = 'translateY(-8px) rotate(-45deg)';
+            mobileLinks.forEach(link => {
+               link.style.opacity = '1';
+               link.style.transform = 'translateY(0)';
+            });
+         } else {
+            navScreen.style.transform = 'translateY(-100%)';
+            navScreen.style.opacity = '0';
+            bars[0].style.transform = 'translateY(0) rotate(0)';
+            bars[1].style.opacity = '1';
+            bars[2].style.transform = 'translateY(0) rotate(0)';
+            mobileLinks.forEach(link => {
+               link.style.opacity = '0';
+               link.style.transform = 'translateY(20px)';
+            });
+         }
+      };
+
+      if(menuToggle) {
+         menuToggle.addEventListener('click', toggleMenu);
+         mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+      }
 
       window.onscroll = () => {
          const windist = window.pageYOffset;
@@ -452,12 +434,11 @@ export function renderMidnight(root) {
          const scrollPercent = (windist / (docHeight - winHeight)) * 100;
          if (progressBar) progressBar.style.width = scrollPercent + '%';
 
-         // Active Section Manual Check
          let current = '';
          sections.forEach(section => {
             const sectionTop = section.offsetTop;
             if (pageYOffset >= sectionTop - 200) {
-               current = section.getAttribute('id');
+               current = section.id;
             }
          });
 
@@ -468,7 +449,31 @@ export function renderMidnight(root) {
             }
          });
       };
+
+      // Gallery Interactivity
+      if (window.innerWidth <= 768) {
+         const gallery = root.querySelector('#interactive-bento');
+         if (gallery) {
+            const frames = gallery.querySelectorAll('.bento-item');
+            frames.forEach(frame => {
+               frame.addEventListener('click', () => {
+                  frames.forEach(f => f.classList.remove('mobile-active'));
+                  frame.classList.add('mobile-active');
+               });
+            });
+
+            const bObserver = new IntersectionObserver((entries) => {
+               entries.forEach(entry => {
+                  if (entry.isIntersecting) {
+                     frames.forEach(f => f.classList.remove('mobile-active'));
+                     entry.target.classList.add('mobile-active');
+                  }
+               });
+            }, { rootMargin: '-40% 0px -40% 0px', threshold: 0.1 });
+            frames.forEach(f => bObserver.observe(f));
+         }
+      }
    };
 
-   setTimeout(setupScripts, 50);
+   setTimeout(initAura, 100);
 }
