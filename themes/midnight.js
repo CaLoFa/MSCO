@@ -5,23 +5,23 @@ export function renderMidnight(root) {
       <!-- Progress Bar -->
       <div id="scroll-progress" style="position: fixed; top: 0; left: 0; height: 3px; background: #e5c158; width: 0%; z-index: 1001; transition: width 0.1s;"></div>
 
-      <!-- Minimal Sticky Header -->
-      <header id="main-header" style="padding: 20px 60px; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; box-sizing: border-box; z-index: 2000; background: rgba(10, 10, 12, 0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.3s ease;">
-        <div style="cursor: pointer; width: 130px; height: 130px; display: flex; align-items: center;" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+       <!-- Minimal Sticky Header -->
+      <header id="main-header" style="padding: 10px 60px; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; box-sizing: border-box; z-index: 2000; background: rgba(10, 10, 12, 0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.3s ease;">
+        <div style="cursor: pointer; width: 100px; height: 100px; display: flex; align-items: center;" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
           <img src="/assets/mcso_star_badge.png" alt="MCSO Logo" style="width: 100%; height: 100%; object-fit: contain;">
         </div>
         
         <nav id="main-nav" class="desktop-nav" style="display: flex; gap: 40px; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; align-items: center;">
-          <a href="#about" class="nav-link" style="color: #fff; text-decoration: none; opacity: 0.6; transition: all 0.3s; position: relative;">The Owner</a>
-          <a href="#pathways" class="nav-link" style="color: #fff; text-decoration: none; opacity: 0.6; transition: all 0.3s; position: relative;">Services</a>
-          <a href="#lookbook" class="nav-link" style="color: #fff; text-decoration: none; opacity: 0.6; transition: all 0.3s; position: relative;">Gallery</a>
-          <a href="#contact" class="nav-link" style="color: #e5c158; text-decoration: none; border: 1px solid #e5c158; padding: 12px 30px; border-radius: 2px; transition: all 0.3s;">Consultation</a>
+          <a href="#about" class="nav-link" style="color: #fff; text-decoration: none; opacity: 0.6; transition: all 0.3s; position: relative; padding: 10px 0;">The Owner</a>
+          <a href="#pathways" class="nav-link" style="color: #fff; text-decoration: none; opacity: 0.6; transition: all 0.3s; position: relative; padding: 10px 0;">Services</a>
+          <a href="#lookbook" class="nav-link" style="color: #fff; text-decoration: none; opacity: 0.6; transition: all 0.3s; position: relative; padding: 10px 0;">Gallery</a>
+          <a href="#contact" class="nav-link" style="color: #e5c158; text-decoration: none; border: 1px solid #e5c158; padding: 12px 30px; border-radius: 2px; transition: all 0.3s; font-weight: 700;">Consultation</a>
         </nav>
 
-        <div id="mobile-menu-toggle" class="mobile-only" style="cursor: pointer; padding: 10px; z-index: 2001;">
-           <div class="bar1" style="width: 28px; height: 2px; background: #e5c158; margin-bottom: 6px; transition: 0.4s;"></div>
-           <div class="bar2" style="width: 28px; height: 2px; background: #e5c158; margin-bottom: 6px; transition: 0.4s;"></div>
-           <div class="bar3" style="width: 28px; height: 2px; background: #e5c158; transition: 0.4s;"></div>
+        <div id="mobile-menu-toggle" class="mobile-only" style="cursor: pointer; padding: 10px; z-index: 2001; margin-right: -10px;">
+           <div class="bar1" style="width: 24px; height: 2px; background: #e5c158; margin-bottom: 5px; transition: 0.4s;"></div>
+           <div class="bar2" style="width: 24px; height: 2px; background: #e5c158; margin-bottom: 5px; transition: 0.4s;"></div>
+           <div class="bar3" style="width: 24px; height: 2px; background: #e5c158; transition: 0.4s;"></div>
         </div>
       </header>
 
@@ -36,44 +36,50 @@ export function renderMidnight(root) {
       <main style="flex: 1;">
         <!-- Immersive Hero Section -->
         <section id="hero" style="position: relative; height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-          <div style="position: absolute; inset: 0; background: url('/assets/mcso_patrol_header.jpg') center/cover; opacity: 0.45; filter: contrast(1.1) brightness(0.85); transition: transform 10s ease-out; transform: scale(1.1); animation: heroZoom 20s infinite alternate;"></div>
+          <div id="hero-bg" style="position: absolute; inset: 0; background: url('/assets/mcso_patrol_header.jpg') center/cover; opacity: 0.45; filter: contrast(1.1) brightness(0.85); transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1); transform: scale(1);"></div>
           <style>
-            @keyframes heroZoom { from { transform: scale(1.1); } to { transform: scale(1.2); } }
+            @keyframes heroZoom { from { transform: scale(1); } to { transform: scale(1.1); } }
             @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
             .nav-link.active { opacity: 1 !important; color: #e5c158 !important; }
             .nav-link.active::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 100%; height: 1px; background: #e5c158; }
             
-
+            #hero-bg { animation: heroZoom 20s infinite alternate cubic-bezier(0.45, 0, 0.55, 1); }
 
             .mobile-only { display: none; }
             
             @media (max-width: 1024px) {
                .desktop-nav { display: none !important; }
                .mobile-only { display: block; }
-               #main-header { padding: 15px 30px !important; }
+               #main-header { padding: 10px 30px !important; }
+               #main-header > div { width: 80px !important; height: 80px !important; }
                h1 { font-size: 3.5rem !important; }
             }
             @media (max-width: 768px) {
-               h1 { font-size: 2.8rem !important; }
+               h1 { font-size: 2.2rem !important; margin-bottom: 25px !important; letter-spacing: -1px !important; }
+               .hero-subtitle { font-size: 0.7rem !important; margin-bottom: 25px !important; }
+               .hero-desc { font-size: 1rem !important; line-height: 1.6 !important; margin-bottom: 40px !important; padding: 0 10px; }
                .hero-section-padding { padding: 0 20px !important; }
+               .hero-cta-container { flex-direction: column !important; gap: 15px !important; align-items: center; width: 100%; }
+               .hero-cta-container a { width: 100%; padding: 18px 0 !important; max-width: 280px; }
                .consultation-grid { grid-template-columns: 1fr !important; gap: 40px !important; padding: 40px !important; }
+               @keyframes heroZoom { from { transform: scale(1.05); } to { transform: scale(1.15); } }
             }
           </style>
           
           <div style="position: absolute; inset: 0; background: radial-gradient(circle at center, rgba(10, 10, 12, 0.4) 0%, rgba(10, 10, 12, 1) 100%);"></div>
           
-          <div style="position: relative; z-index: 2; text-align: center; padding: 0 40px; max-width: 1000px;">
-            <div style="color: #e5c158; font-size: 0.8rem; letter-spacing: 6px; text-transform: uppercase; margin-bottom: 40px; font-weight: 600; opacity: 0; animation: fadeInUp 1s forwards 0.5s;">
+          <div style="position: relative; z-index: 2; text-align: center; padding: 0 20px; max-width: 1000px; width: 100%;">
+            <div class="hero-subtitle" style="color: #e5c158; font-size: 0.8rem; letter-spacing: 6px; text-transform: uppercase; margin-bottom: 40px; font-weight: 600; opacity: 0; animation: fadeInUp 1s forwards 0.5s;">
                Professional Security Services
             </div>
-            <h1 style="font-size: 5.5rem; font-weight: 200; line-height: 1; margin-bottom: 40px; letter-spacing: -3px; opacity: 0; animation: fadeInUp 1s forwards 0.8s;">
+            <h1 style="font-size: 5.5rem; font-weight: 200; line-height: 1.1; margin-bottom: 40px; letter-spacing: -3px; opacity: 0; animation: fadeInUp 1s forwards 0.8s;">
               The Standard of <br>
               <span style="font-style: italic; font-family: 'Playfair Display', serif; color: #e5c158; font-weight: 400;">Professional Protection.</span>
             </h1>
-            <p style="font-size: 1.25rem; color: #a0a0a0; line-height: 2; margin-bottom: 60px; font-weight: 300; max-width: 750px; margin-left: auto; margin-right: auto; opacity: 0; animation: fadeInUp 1s forwards 1.1s;">
+            <p class="hero-desc" style="font-size: 1.2rem; color: #a0a0a0; line-height: 1.8; margin-bottom: 60px; font-weight: 300; max-width: 750px; margin-left: auto; margin-right: auto; opacity: 0; animation: fadeInUp 1s forwards 1.1s;">
               Veteran-owned and operated. We provide comprehensive private security solutions built on reliability, detailed planning, and steadfast commitment to our clients.
             </p>
-            <div style="opacity: 0; animation: fadeInUp 1s forwards 1.4s; display: flex; gap: 20px; justify-content: center;">
+            <div class="hero-cta-container" style="opacity: 0; animation: fadeInUp 1s forwards 1.4s; display: flex; gap: 20px; justify-content: center;">
               <a href="#pathways" style="background: #e5c158; color: #0a0a0c; border: 1px solid #e5c158; padding: 22px 50px; font-size: 0.9rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 800; cursor: pointer; text-decoration: none; transition: all 0.4s ease; display: inline-block;">
                 View Services
               </a>
