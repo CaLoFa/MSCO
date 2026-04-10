@@ -8,7 +8,7 @@ export function renderMidnight(root) {
       <!-- Minimal Sticky Header -->
       <header id="main-header" style="padding: 20px 60px; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; box-sizing: border-box; z-index: 2000; background: rgba(10, 10, 12, 0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.3s ease;">
         <div style="cursor: pointer; width: 130px; height: 130px; display: flex; align-items: center;" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-          <img src="/assets/mcso_logo_lion.png" alt="MCSO Logo" style="width: 100%; height: 100%; object-fit: contain;">
+          <img src="/assets/mcso_star_badge.png" alt="MCSO Logo" style="width: 100%; height: 100%; object-fit: contain;">
         </div>
         
         <nav id="main-nav" class="desktop-nav" style="display: flex; gap: 40px; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; align-items: center;">
@@ -84,243 +84,374 @@ export function renderMidnight(root) {
           </div>
         </section>
 
-        <!-- Scannable Legacy Section (Redesigned) -->
-        <section id="about" style="padding: 150px 10%; background: linear-gradient(180deg, #0a0a0c 0%, #0d0d10 100%); position: relative; overflow: hidden;">
+        <!-- Scannable Legacy Section (Editorial Design) -->
+        <section id="about" style="padding: 150px 0 0 0; background: #0a0a0c; position: relative;">
           <!-- decorative blur element -->
-          <div style="position: absolute; top: -10%; left: -5%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(229,193,88,0.03) 0%, transparent 60%); filter: blur(60px); pointer-events: none;"></div>
+          <div style="position: absolute; top: 0; left: 0; width: 600px; height: 600px; background: radial-gradient(circle, rgba(229,193,88,0.03) 0%, transparent 60%); filter: blur(60px); pointer-events: none;"></div>
           
-          <div style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 2;">
-             <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 70px;">
+          <div style="max-width: 1400px; margin: 0 auto; padding: 0 10%; position: relative; z-index: 2;">
+             <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 40px;">
                 <div style="height: 1px; width: 60px; background: rgba(229,193,88,0.5);"></div>
                 <div style="color: #e5c158; font-size: 0.75rem; letter-spacing: 5px; text-transform: uppercase; font-weight: 700;">The Legacy</div>
              </div>
+             <h2 style="font-size: 4rem; font-weight: 200; line-height: 1.1; margin-bottom: 100px; letter-spacing: -1.5px;">Meet The Owner, <br /><span style="font-style: italic; font-family: 'Playfair Display', serif; color: #e5c158; font-weight: 400;">Michael Colon.</span></h2>
+          </div>
+
+          <style>
+             .editorial-row { display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; margin-bottom: 0; }
+             .ed-image { min-height: 750px; position: relative; overflow: hidden; }
+             .ed-image img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) brightness(0.7); transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1); position: absolute; inset: 0; }
+             .editorial-row:hover .ed-image img { filter: grayscale(0%) brightness(1); transform: scale(1.05); }
+             .ed-text { padding: 100px 10%; display: flex; flex-direction: column; justify-content: center; background: #0a0a0c; border-bottom: 1px solid rgba(255,255,255,0.03); border-top: 1px solid rgba(255,255,255,0.03); }
+             .ed-text-alt { background: #0d0d10; }
              
-             <style>
-                .about-grid-res { display: grid; grid-template-columns: 1fr 1.3fr; gap: 100px; align-items: center; }
-                .legacy-card { background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.03); border-radius: 8px; padding: 35px; transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); cursor: pointer; position: relative; overflow: hidden; }
-                .legacy-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(229,193,88,0.05) 0%, transparent 100%); opacity: 0; transition: opacity 0.5s ease; }
-                .legacy-card:hover { transform: translateX(10px); border-color: rgba(229,193,88,0.3); background: rgba(255,255,255,0.03); }
-                .legacy-card:hover::before { opacity: 1; }
-                .legacy-card-number { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: rgba(229,193,88,0.2); position: absolute; top: 20px; right: 25px; transition: all 0.5s ease; }
-                .legacy-card:hover .legacy-card-number { color: rgba(229,193,88,0.8); transform: scale(1.1); }
-                .legacy-img-wrapper { position: relative; overflow: hidden; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); }
-                .legacy-img-wrapper img { width: 100%; height: auto; display: block; filter: grayscale(100%) brightness(0.7); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
-                .legacy-img-wrapper:hover img { filter: grayscale(0%) brightness(1); transform: scale(1.05); }
-                .img-overlay-box { position: absolute; bottom: -20px; right: -20px; background: #0a0a0c; padding: 25px 35px; border-top-left-radius: 8px; border-top: 1px solid rgba(229,193,88,0.2); border-left: 1px solid rgba(229,193,88,0.2); backdrop-filter: blur(10px); transition: transform 0.5s ease; }
-                .legacy-img-wrapper:hover .img-overlay-box { transform: translate(-10px, -10px); }
-                
-                @media (max-width: 1024px) {
-                   .about-grid-res { grid-template-columns: 1fr; gap: 60px; }
-                   .img-overlay-box { bottom: 0; right: 0; }
-                }
-             </style>
+             @media (max-width: 1024px) {
+                .editorial-row { grid-template-columns: 1fr !important; display: flex; flex-direction: column; }
+                .editorial-row.reverse-mobile { flex-direction: column-reverse; }
+                .ed-image { min-height: 500px; width: 100%; }
+                .ed-text { padding: 60px 10%; }
+             }
+             @media (max-width: 768px) {
+                #about h2 { font-size: 3rem !important; }
+                .ed-image { min-height: 400px; }
+             }
+          </style>
 
-               <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-                
-               <div>
-                   <h2 style="font-size: 3.5rem; font-weight: 200; line-height: 1.1; margin-bottom: 35px; letter-spacing: -1.5px;">Meet The Owner, <br /><span style="font-style: italic; font-family: 'Playfair Display', serif; color: #e5c158; font-weight: 400;">Michael Colon.</span></h2>
-                   <div style="font-size: 1.05rem; color: #aaa; line-height: 1.8; margin-bottom: 30px; font-weight: 300; display: flex; flex-direction: column; gap: 35px; text-align: left;">
-                      <div>
-                         <div style="color: #e5c158; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; margin-bottom: 15px; opacity: 0.8;">Early Foundations & Service</div>
-                         <p style="margin: 0;">Michael Colon was born in Brooklyn, NY and came from humble beginnings. After enlisting at 19 years old and honorably serving our country in United States Navy, Michael had his professional trajectory in focus starting his career in high profile Executive Protection. However, Michael did not stop there as he had always had a calling for service.</p>
-                      </div>
-                      
-                      <div>
-                         <div style="color: #e5c158; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; margin-bottom: 15px; opacity: 0.8;">Law Enforcement Leadership</div>
-                         <p style="margin: 0;">At 36 years old, Michael Joined the New York City Police Department's Aux Division. Michael seen by his superiors as a natural born leader, was shortly there after promoted him to the rank of sergeant then lieutenant. As the Executive officer in charge, Michael was assigned to oversee the all-aux patrol officers of Manhattan North’s 23rd Precinct. After working for several years in law enforcement and the high-end luxury goods private security industries, Michael moved to South Florida where he accepted a position as a security manager at a major retailer corporate campus.</p>
-                      </div>
-                      
-                      <div>
-                         <div style="color: #e5c158; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; margin-bottom: 15px; opacity: 0.8;">Strategic Management</div>
-                         <p style="margin: 0;">Michael, after his ten-year, accepted a position as an executive security manager at a high-end residential community. As Michael was in charge of 33-armed security officers as well as onsite medical personnel, It was here where he really dug deep, researched and analyzed what was missing, overlooked and truly needed in today’s private security market.</p>
-                      </div>
-                      
-                      <div>
-                         <div style="color: #e5c158; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; margin-bottom: 15px; opacity: 0.8;">A Vision for Excellence</div>
-                         <p style="margin: 0;">In 2022, Michael decided to go on his own and open his own private security company. Michael did so only after seeing what are critical several missing elements in today's private security industry which include attention to detail as well as giving great client service. Michael Colon has set the standard exceeding any and all client expectations in both the residential and commercial environments.</p>
-                      </div>
-                   </div>
+          <!-- Chapter 1: Foundations -->
+          <div class="editorial-row">
+             <div class="ed-image">
+                 <img src="/assets/michael_white_shirt.jpg" alt="Michael Colon Foundations" style="object-position: center 5%;">
+             </div>
+             <div class="ed-text ed-text-alt">
+                <div style="color: #e5c158; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; margin-bottom: 25px;">01. Foundations & Service</div>
+                <h3 style="font-size: 2.5rem; font-weight: 200; margin-bottom: 30px; line-height: 1.2;">A Calling for <span style="font-style: italic; color: #e5c158;">Service.</span></h3>
+                <p style="font-size: 1.1rem; color: #aaa; line-height: 1.8; font-weight: 300;">Michael Colon was born in Brooklyn, NY and came from humble beginnings. After enlisting at 19 years old and honorably serving our country in the United States Navy, Michael had his professional trajectory in focus, starting his career in high-profile Executive Protection.</p>
+             </div>
+          </div>
 
-                   <div style="margin-top: 50px; padding: 40px; border-left: 2px solid #e5c158; background: rgba(229,193,88,0.03); text-align: left;">
-                      <p style="font-size: 1.4rem; color: #fff; font-style: italic; font-family: 'Playfair Display', serif; line-height: 1.6; margin: 0;">
-                         “Be the example, stand by your word and keep your promises to your employees, partners and clients.”
-                      </p>
-                   </div>
+          <!-- Chapter 2: Leadership -->
+          <div class="editorial-row reverse-mobile">
+             <div class="ed-text">
+                <div style="color: #e5c158; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; margin-bottom: 25px;">02. Law Enforcement</div>
+                <h3 style="font-size: 2.5rem; font-weight: 200; margin-bottom: 30px; line-height: 1.2;">Natural Born <span style="font-style: italic; color: #e5c158;">Leader.</span></h3>
+                <p style="font-size: 1.1rem; color: #aaa; line-height: 1.8; font-weight: 300; margin-bottom: 20px;">At 36 years old, Michael joined the New York City Police Department's Aux Division. Seen by his superiors as a natural born leader, he was shortly thereafter promoted to the rank of sergeant, then lieutenant.</p>
+                <p style="font-size: 1.1rem; color: #aaa; line-height: 1.8; font-weight: 300;">As the Executive Officer in charge, Michael oversaw all-aux patrol officers of Manhattan North’s 23rd Precinct before transitioning to South Florida as a security manager at a major retailer corporate campus.</p>
+             </div>
+             <div class="ed-image">
+                 <img src="/assets/michael_nypd.jpg" alt="NYPD Leadership" style="object-position: center 15%;">
+             </div>
+          </div>
+
+          <!-- Chapter 3: Vision -->
+          <div class="editorial-row">
+             <div class="ed-image">
+                 <img src="/assets/michael_tactical.jpg" alt="Strategic Operations" style="object-position: center 10%;">
+             </div>
+             <div class="ed-text ed-text-alt">
+                <div style="color: #e5c158; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; margin-bottom: 25px;">03. The Vision</div>
+                <h3 style="font-size: 2.5rem; font-weight: 200; margin-bottom: 30px; line-height: 1.2;">Exceeding <span style="font-style: italic; color: #e5c158;">Expectations.</span></h3>
+                <p style="font-size: 1.1rem; color: #aaa; line-height: 1.8; font-weight: 300; margin-bottom: 20px;">While managing 33 armed security officers and onsite medical personnel at a high-end residential community, Michael dug deep into what was missing and truly needed in today's private security market.</p>
+                <p style="font-size: 1.1rem; color: #aaa; line-height: 1.8; font-weight: 300; margin-bottom: 50px;">In 2022, he opened his own firm to set a new standard in attention to detail and elite client service.</p>
+                <div style="padding-left: 30px; border-left: 2px solid #e5c158;">
+                   <p style="font-size: 1.3rem; color: #fff; font-style: italic; font-family: 'Playfair Display', serif; line-height: 1.6; margin: 0;">
+                      “Be the example, stand by your word and keep your promises to your employees, partners and clients.”
+                   </p>
                 </div>
              </div>
           </div>
         </section>
 
         <!-- Services Section -->
-        <section id="pathways" style="padding: 150px 10%; background: #0d0d0f; border-top: 1px solid rgba(255,255,255,0.03);">
+        <section id="pathways" style="padding: 150px 10%; background: #0a0a0c; border-top: 1px solid rgba(255,255,255,0.03);">
            <div style="max-width: 1400px; margin: 0 auto;">
-              <div style="text-align: center; margin-bottom: 80px;">
-                 <div style="color: #e5c158; font-size: 0.8rem; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 20px; font-weight: 600;">Security Solutions</div>
-                 <h2 style="font-size: 3.5rem; font-weight: 200; line-height: 1.1; margin-bottom: 30px; letter-spacing: -1px;">Our Security <span style="font-style: italic; font-family: 'Playfair Display', serif; color: #e5c158;">Services.</span></h2>
-                 <p style="font-size: 1.1rem; color: #888; max-width: 700px; margin: 0 auto; font-weight: 300; line-height: 1.8;">
-                    At MCSO, we offer a wide variety of security service, custom tailored to fit your specific needs.
-                 </p>
-              </div>
+              <header style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 100px; gap: 60px; flex-wrap: wrap;">
+                 <div style="max-width: 600px;">
+                    <div style="color: #e5c158; font-size: 0.8rem; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 25px; font-weight: 700;">Security Solutions</div>
+                    <h2 style="font-size: 4.5rem; font-weight: 200; line-height: 1; letter-spacing: -2px; margin: 0;">Our Specialized <br/><span style="font-style: italic; font-family: 'Playfair Display', serif; color: #e5c158;">Services.</span></h2>
+                 </div>
+                 <div style="max-width: 500px; padding-bottom: 10px;">
+                    <p style="font-size: 1.15rem; color: #888; font-weight: 300; line-height: 1.8; margin: 0;">
+                       Elite protection designed for the most demanding environments. We combine veteran expertise with strategic planning to deliver safety as a standard.
+                    </p>
+                 </div>
+              </header>
 
               <style>
-                 .capabilities-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-                 @media (max-width: 1024px) {
-                    .capabilities-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+                 .services-container { display: grid; grid-template-columns: repeat(12, 1fr); gap: 40px; }
+                 .service-card { position: relative; border-radius: 4px; overflow: hidden; cursor: pointer; transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); background: #111; border: 1px solid rgba(255,255,255,0.05); text-decoration: none; display: flex; flex-direction: column; }
+                 
+                 .service-card.large { grid-column: span 8; height: 600px; }
+                 .service-card.medium { grid-column: span 4; height: 600px; }
+                 .service-card.small { grid-column: span 6; height: 500px; }
+                 
+                 .service-card .card-img { position: absolute; inset: 0; filter: grayscale(100%) brightness(0.7); transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
+                 .service-card:hover .card-img { filter: grayscale(0%) brightness(0.9); transform: scale(1.05); }
+                 
+                 .card-content { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(10,10,12,0.95) 0%, rgba(10,10,12,0.4) 50%, transparent 100%); padding: 50px; display: flex; flex-direction: column; justify-content: flex-end; z-index: 2; transition: all 0.6s ease; }
+                 .service-card:hover .card-content { background: linear-gradient(0deg, rgba(10,10,12,0.98) 0%, rgba(10,10,12,0.2) 100%); }
+                 
+                 .service-tag { color: #e5c158; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 800; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+                 .service-tag::before { content: ''; width: 20px; height: 1px; background: #e5c158; transition: width 0.4s ease; }
+                 .service-card:hover .service-tag::before { width: 40px; }
+                 
+                 .service-card h3 { font-size: 2.5rem; font-weight: 200; color: #fff; margin: 0 0 20px 0; line-height: 1.1; letter-spacing: -1px; }
+                 .service-card p { color: #aaa; font-size: 1rem; line-height: 1.6; margin: 0; max-width: 450px; opacity: 0.8; transition: opacity 0.4s; }
+                 .service-card:hover p { opacity: 1; color: #fff; }
+                 
+                 .service-cta { margin-top: 30px; display: flex; align-items: center; gap: 15px; color: #e5c158; font-size: 0.8rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; opacity: 0; transform: translateY(10px); transition: all 0.4s ease 0.1s; }
+                 .service-card:hover .service-cta { opacity: 1; transform: translateY(0); }
+
+                 @media (max-width: 1100px) {
+                    .service-card.large, .service-card.medium { grid-column: span 6; }
                  }
                  @media (max-width: 768px) {
-                    .capabilities-grid { grid-template-columns: 1fr; gap: 20px; }
+                    .services-container { grid-template-columns: 1fr; gap: 20px; }
+                    .service-card { grid-column: span 1 !important; height: 500px !important; }
+                    .card-content { padding: 30px; }
+                    .service-card h3 { font-size: 1.8rem; }
+                    .service-cta { opacity: 1; transform: translateY(0); }
+                    #pathways h2 { font-size: 3rem !important; }
                  }
               </style>
-              <div class="capabilities-grid">
-                 <!-- Service: Personal Detal -->
-                 <div style="position: relative; border: 1px solid rgba(255,255,255,0.05); border-radius: 4px; overflow: hidden; cursor: pointer; transition: all 0.4s ease; background: #111; height: 500px;" class="capability-card">
-                    <div style="position: absolute; inset: 0; background: url('/assets/fleet_sedan_side_1769556143358.png') center/cover; filter: grayscale(100%) opacity(0.5); transition: all 0.5s ease;" class="card-bg"></div>
-                    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(13,13,15,0) 0%, rgba(13,13,15,1) 85%); padding: 40px; display: flex; flex-direction: column; justify-content: flex-end; z-index: 2;">
-                       <h3 style="font-size: 1.8rem; font-weight: 300; margin: 0 0 15px 0; color: #fff; line-height: 1.2;">Security Escorts /<br/>Bodyguard services</h3>
-                       <p style="color: #888; font-size: 0.95rem; line-height: 1.6; margin: 0;">At MCSO We offer close quarter one on one executive protection, Body guarding services. Our clients range from executive professionals, to celebrities' to folks who might be receiving workplace or personal threats.</p>
+
+              <div class="services-container">
+                 <!-- Card 1: Executive Protection (Large) -->
+                 <div class="service-card large" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })">
+                    <div class="card-img" style="background: url('/assets/executive/exec_1.jpg') center/cover;"></div>
+                    <div class="card-content">
+                       <div class="service-tag">High Level</div>
+                       <h3>Executive Protection <br/>& Bodyguard Services</h3>
+                       <p>Discreet, multi-layered protection for executives, high-profile individuals, and private clients. We focus on risk mitigation and seamless mobility.</p>
+                       <div class="service-cta">Inquire Now ➔</div>
                     </div>
                  </div>
 
-                 <!-- Service: Residential -->
-                 <div style="position: relative; border: 1px solid rgba(255,255,255,0.05); border-radius: 4px; overflow: hidden; cursor: pointer; transition: all 0.4s ease; background: #111; height: 500px;" class="capability-card">
-                    <div style="position: absolute; inset: 0; background: url('/assets/fleet_suv_front_1769556132620.png') center/cover; filter: grayscale(100%) opacity(0.5); transition: all 0.5s ease;" class="card-bg"></div>
-                    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(13,13,15,0) 0%, rgba(13,13,15,1) 85%); padding: 40px; display: flex; flex-direction: column; justify-content: flex-end; z-index: 2;">
-                       <h3 style="font-size: 1.8rem; font-weight: 300; margin: 0 0 15px 0; color: #fff;">Residential property protection</h3>
-                       <p style="color: #888; font-size: 0.95rem; line-height: 1.6; margin: 0;">Our highly trained and residential security experienced officers will promote the attention to detail and exceptional drive to ensure your residents peace of mind while on their property and in their homes.</p>
+                 <!-- Card 2: Residential (Medium) -->
+                 <div class="service-card medium" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })">
+                    <div class="card-img" style="background: url('/assets/fleet/fleet_5.jpg') center/cover;"></div>
+                    <div class="card-content">
+                       <div class="service-tag">Domestic</div>
+                       <h3>Residential Property <br/>Protection</h3>
+                       <p>Ensuring absolute peace of mind for residents through elite onsite security and community patrol services.</p>
+                       <div class="service-cta">Inquire Now ➔</div>
                     </div>
                  </div>
 
-                 <!-- Service: Commercial -->
-                 <div style="position: relative; border: 1px solid rgba(255,255,255,0.05); border-radius: 4px; overflow: hidden; cursor: pointer; transition: all 0.4s ease; background: #111; height: 500px;" class="capability-card">
-                    <div style="position: absolute; inset: 0; background: url('/assets/fleet_convoy_1769556157064.png') center/cover; filter: grayscale(100%) opacity(0.5); transition: all 0.5s ease;" class="card-bg"></div>
-                    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(13,13,15,0) 0%, rgba(13,13,15,1) 85%); padding: 40px; display: flex; flex-direction: column; justify-content: flex-end; z-index: 2;">
-                       <h3 style="font-size: 1.8rem; font-weight: 300; margin: 0 0 15px 0; color: #fff;">Commercial property protection</h3>
-                       <p style="color: #888; font-size: 0.85rem; line-height: 1.5; margin: 0;">
-                          At the Michael Colon Security Organization, we understand the challenges and have the staff in place to address your company's concerns with respect to personnel safety as well as their overall safety in the work place. Having a physical security presence at your place of business and the ability to escort staff to their vehicles creates a sense of safety amongst your companies workforce as well as driving a overall positive perception. 
-                       </p>
-                       <div class="card-reveal" style="max-height: 0; overflow: hidden; transition: max-height 0.4s ease; margin-top: 0;">
-                          <ul style="list-style: none; padding: 15px 0 0 0; margin: 0; color: #e5c158; font-size: 0.75rem; display: grid; grid-template-columns: 1fr 1fr; gap: 5px; text-transform: uppercase; letter-spacing: 1px;">
-                             <li>Hospitals</li>
-                             <li>Schools</li>
-                             <li>College campuses</li>
-                             <li>Shopping Centers</li>
-                             <li>Corporate centers and offices</li>
-                             <li>Financial institutions</li>
-                             <li>High end luxury good establishments</li>
-                             <li>Currency-Bank drops/deposits</li>
-                          </ul>
-                       </div>
+                 <!-- Card 3: Commercial (Small) -->
+                 <div class="service-card small">
+                    <div class="card-img" style="background: url('/assets/fleet/fleet_4.jpg') center/cover;"></div>
+                    <div class="card-content">
+                       <div class="service-tag">Corporate</div>
+                       <h3>Commercial & Industrial <br/>Security</h3>
+                       <p>Scalable infrastructure security for corporate campuses, medical facilities, and high-end retail establishments.</p>
+                       <div class="service-cta">Inquire Now ➔</div>
+                    </div>
+                 </div>
+
+                 <!-- Card 4: Event Security (Small) -->
+                 <div class="service-card small" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })">
+                    <div class="card-img" style="background: url('/assets/field/56.jpg') center/cover;"></div>
+                    <div class="card-content">
+                       <div class="service-tag">Special Ops</div>
+                       <h3>Special Events <br/>& Crowd Management</h3>
+                       <p>Professional event security coordination ensuring safety and order for large-scale gatherings and high-stakes venues.</p>
+                       <div class="service-cta">Inquire Now ➔</div>
                     </div>
                  </div>
               </div>
-
-              <style>
-                 .capability-card:hover { border-color: rgba(229,193,88,0.5) !important; transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
-                 .capability-card:hover .card-bg { filter: grayscale(0%) opacity(0.8) !important; transform: scale(1.05); }
-                 .capability-card:hover .card-reveal { max-height: 150px !important; }
-              </style>
            </div>
         </section>
 
-        <!-- Gallery Section -->
-        <section id="lookbook" style="padding: 120px 0; background: #0a0a0c; border-bottom: 1px solid rgba(255,255,255,0.03);">
-           <div style="padding: 0 10%; margin-bottom: 60px;">
-              <div style="color: #e5c158; font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 20px; font-weight: 600;">Operational Standards</div>
-              <h2 style="font-size: 3.5rem; font-weight: 200; letter-spacing: -1px; margin: 0;">Precision. <span style="font-style: italic; font-family: 'Playfair Display', serif; color: #e5c158;">Protection. Performance.</span></h2>
+        <!-- Sectioned Gallery -->
+        <section id="lookbook" style="padding: 150px 0; background: #0a0a0c; overflow: hidden; border-bottom: 1px solid rgba(255,255,255,0.03);">
+           <div style="padding: 0 10%; margin-bottom: 80px;">
+              <div style="color: #e5c158; font-size: 0.8rem; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 20px; font-weight: 600;">Operational Standards</div>
+              <h2 style="font-size: 3.5rem; font-weight: 200; letter-spacing: -1px; margin: 0; line-height: 1.1;">Precision. <span style="font-style: italic; font-family: 'Playfair Display', serif; color: #e5c158;">Operational Excellence.</span></h2>
            </div>
-           
-           <style>
-             .bento-gallery { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 250px; gap: 20px; padding: 0 10%; }
-             .bento-item { position: relative; border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); cursor: pointer; transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease, border-color 0.4s ease; background: #111; }
-             .bento-item:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 20px 40px rgba(0,0,0,0.8); z-index: 10; border-color: rgba(229, 193, 88, 0.4); }
-             .bento-item img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) brightness(0.6); transition: transform 0.8s ease, filter 0.8s ease; }
-             .bento-item:hover img { transform: scale(1.08); filter: grayscale(0%) brightness(1); }
-             
-             .bento-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,10,12,0.95) 0%, rgba(10,10,12,0.1) 60%, transparent 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 30px; opacity: 0; transition: opacity 0.4s ease; pointer-events: none; }
-             .bento-item:hover .bento-overlay { opacity: 1; }
-             
-             .bento-cat { color: #e5c158; font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 800; margin-bottom: 8px; transform: translateY(15px); opacity: 0; transition: all 0.4s ease 0.1s; }
-             .bento-title { color: #fff; font-size: 1.5rem; font-weight: 300; line-height: 1.2; transform: translateY(15px); opacity: 0; transition: all 0.4s ease 0.2s; margin: 0; }
-             .bento-item:hover .bento-cat, .bento-item:hover .bento-title { transform: translateY(0); opacity: 1; }
 
-             /* Desktop Layout Placements */
-             .item-1 { grid-column: span 2; grid-row: span 2; } /* Large feature */
-             .item-2 { grid-column: span 2; grid-row: span 1; } /* Wide top right */
-             .item-3 { grid-column: span 1; grid-row: span 1; } /* Normal right */
-             .item-4 { grid-column: span 1; grid-row: span 1; } /* Normal far right */
-             .item-5 { grid-column: span 2; grid-row: span 1; } /* Wide bottom left */
-             .item-6 { grid-column: span 2; grid-row: span 1; } /* Wide bottom right */
+           <style>
+             @keyframes hintPulse { 0% { opacity: 0.2; transform: translateX(0); } 50% { opacity: 0.8; transform: translateX(5px); } 100% { opacity: 0.2; transform: translateX(0); } }
+             .scroll-hint { margin-left: auto; font-size: 0.6rem; color: rgba(255,255,255,0.4); letter-spacing: 2px; text-transform: uppercase; display: flex; align-items: center; gap: 8px; }
+             .scroll-hint span { display: inline-block; animation: hintPulse 2s infinite ease-in-out; color: #e5c158; }
+
+             .gallery-row { margin-bottom: 100px; }
+             .gallery-row:last-child { margin-bottom: 0; }
+             .gallery-row-title { padding: 0 10%; margin-bottom: 30px; color: rgba(255,255,255,0.4); font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; font-weight: 700; display: flex; align-items: center; gap: 20px; }
+             .gallery-row-title::before { content: ''; width: 30px; height: 1px; background: rgba(255,255,255,0.05); }
              
-             /* Responsive Mobile Layout */
-             @media (max-width: 1024px) {
-                .bento-gallery { grid-template-columns: repeat(2, 1fr); gap: 15px; grid-auto-rows: 240px; padding: 0 5%; }
-                .item-1 { grid-column: span 2; grid-row: span 2; }
-                .item-2 { grid-column: span 2; grid-row: span 1; }
-                .item-3 { grid-column: span 1; grid-row: span 1; }
-                .item-4 { grid-column: span 1; grid-row: span 1; }
-                .item-5 { grid-column: span 2; grid-row: span 1; }
-                .item-6 { grid-column: span 2; grid-row: span 1; }
-             }
+             .scroll-container { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 30px; padding: 0 10% 40px 10%; scrollbar-width: none; -ms-overflow-style: none; -webkit-overflow-scrolling: touch; }
+             .scroll-container::-webkit-scrollbar { display: none; }
+             
+             .gallery-item { flex: 0 0 450px; height: 600px; scroll-snap-align: start; position: relative; border-radius: 4px; overflow: hidden; transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); cursor: pointer; border: 1px solid rgba(255,255,255,0.05); }
+             .gallery-item:hover { border-color: rgba(229, 193, 88, 0.4); transform: translateY(-10px); }
+             .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), filter 1.2s ease; filter: grayscale(100%) brightness(0.7); }
+             .gallery-item:hover img { transform: scale(1.05); filter: grayscale(0%) brightness(1); }
+             
+             .item-label { position: absolute; bottom: 0; left: 0; right: 0; padding: 40px; background: linear-gradient(to top, rgba(10,10,12,0.9) 0%, transparent 100%); transform: translateY(20px); opacity: 0; transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); pointer-events: none; }
+             .gallery-item:hover .item-label { transform: translateY(0); opacity: 1; }
+             .item-label h4 { color: #e5c158; font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase; margin: 0 0 10px 0; font-weight: 800; }
+             .item-label p { color: #fff; font-size: 1.2rem; font-weight: 300; margin: 0; letter-spacing: 1px; }
+
              @media (max-width: 768px) {
-                /* Interactive Scroll Feed on Mobile */
-                .bento-gallery { display: flex; flex-direction: column; gap: 20px; padding: 0 5%; }
-                .bento-item { height: 350px; border-radius: 12px; }
-                .bento-overlay { opacity: 1; background: linear-gradient(to top, rgba(10,10,12,0.95) 0%, rgba(10,10,12,0.3) 100%); }
-                .bento-cat, .bento-title { transform: translateY(0); opacity: 1; }
-                .bento-item img { filter: grayscale(50%) brightness(0.8); }
-                
-                /* Active tap/scroll state for mobile */
-                .bento-item.mobile-active { border-color: rgba(229, 193, 88, 0.8); transform: scale(1.02); }
-                .bento-item.mobile-active img { filter: grayscale(0%) brightness(1); }
+                .gallery-item { flex: 0 0 85vw !important; height: 420px; }
+                .scroll-container { gap: 15px; padding: 0 20px 30px 20px; }
+                .gallery-row-title { padding: 0 20px; }
+                .item-label { opacity: 1; transform: translateY(0); background: linear-gradient(to top, rgba(10,10,12,0.8) 0%, transparent 100%); padding: 30px; }
+                .gallery-item img { filter: grayscale(0%) brightness(0.9); }
              }
+
+             .gallery-row-progress { height: 2px; background: rgba(255,255,255,0.05); margin: 0 10% 20px 10%; position: relative; border-radius: 2px; overflow: hidden; }
+             .progress-bar { height: 100%; width: 0%; background: #e5c158; position: absolute; top: 0; left: 0; transition: width 0.1s ease-out; }
+             
+             #lightbox { position: fixed; inset: 0; background: rgba(10,10,12,0.95); z-index: 3000; display: none; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.4s ease; backdrop-filter: blur(10px); cursor: pointer; }
+             #lightbox img { max-width: 90%; max-height: 90vh; object-fit: contain; border-radius: 4px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); transform: scale(0.95); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+             #lightbox.active img { transform: scale(1); }
+
+              #lightbox-prev:hover, #lightbox-next:hover { opacity: 1 !important; color: #e5c158; }
+              @media (max-width: 768px) {
+                 #lightbox-prev, #lightbox-next { display: none; }
+              }
            </style>
 
-           <div class="bento-gallery" id="interactive-bento">
-              <div class="bento-item item-1">
-                 <img src="/assets/mcso_patrol_header.jpg" alt="Patrol Vehicle">
-                 <div class="bento-overlay">
-                    <div class="bento-cat">Strategic Mobility</div>
-                    <h3 class="bento-title">Advanced Deployment Units</h3>
+           <!-- Row 1: Tactical Fleet -->
+           <div class="gallery-row">
+              <div class="gallery-row-title">
+                 <span>Tactical Fleet</span>
+                 <div class="scroll-hint">Drag to Explore <span>➔</span></div>
+              </div>
+              <div class="scroll-container">
+                 <div class="gallery-item">
+                    <img src="/assets/mcso_patrol_header.jpg" alt="Patrol Header">
+                    <div class="item-label">
+                       <h4>Deployment</h4>
+                       <p>High-Visibility Patrol Units</p>
+                    </div>
+                 </div>
+                 <div class="gallery-item">
+                    <img src="/assets/fleet/fleet_5.jpg" alt="Fleet Unit">
+                    <div class="item-label">
+                       <h4>Patrol Unit</h4>
+                       <p>Community Security</p>
+                    </div>
+                 </div>
+                 <div class="gallery-item">
+                    <img src="/assets/fleet/fleet_3.jpg" alt="Detail">
+                    <div class="item-label">
+                       <h4>Command Response</h4>
+                       <p>Dedicated Vehicles</p>
+                    </div>
+                 </div>
+                 <div class="gallery-item">
+                    <img src="/assets/fleet/fleet_4.jpg" alt="Night Ops">
+                    <div class="item-label">
+                       <h4>Night Operations</h4>
+                       <p>24/7 Vigilance</p>
+                    </div>
+                 </div>
+                 <div class="gallery-item">
+                    <img src="/assets/fleet/fleet_1.jpg" alt="Mobile Unit">
+                    <div class="item-label">
+                       <h4>Mobile Units</h4>
+                       <p>Versatile Deployment</p>
+                    </div>
+                 </div>
+                 <div class="gallery-item">
+                    <img src="/assets/fleet/fleet_2.jpg" alt="Patrol Ready">
+                    <div class="item-label">
+                       <h4>Transport</h4>
+                       <p>Secure Escorts</p>
+                    </div>
                  </div>
               </div>
-              <div class="bento-item item-2">
-                 <img src="/assets/fleet_convoy_1769556157064.png" alt="Fleet Convoy">
-                 <div class="bento-overlay">
-                    <div class="bento-cat">Asset Readiness</div>
-                    <h3 class="bento-title">Integrated Fleet Solutions</h3>
-                 </div>
-              </div>
-              <div class="bento-item item-3">
-                 <img src="/assets/about_navy_1769556364610.png" alt="Navy Veteran">
-                 <div class="bento-overlay">
-                    <div class="bento-cat">Tactical Leadership</div>
-                    <h3 class="bento-title">Elite Operational Command</h3>
-                 </div>
-              </div>
-              <div class="bento-item item-4">
-                 <img src="/assets/about_nypd_1769556377163.png" alt="NYPD Veteran">
-                 <div class="bento-overlay">
-                    <div class="bento-cat">Proven Excellence</div>
-                    <h3 class="bento-title">Advanced Protection Strategies</h3>
-                 </div>
-              </div>
-              <div class="bento-item item-5">
-                 <img src="/assets/fleet_sedan_side_1769556143358.png" alt="Executive Sedan">
-                 <div class="bento-overlay">
-                    <div class="bento-cat">Secure Logistics</div>
-                    <h3 class="bento-title">Premium Client Transitions</h3>
-                 </div>
-              </div>
-              <div class="bento-item item-6">
-                 <img src="/assets/fleet_suv_front_1769556132620.png" alt="Command SUV">
-                 <div class="bento-overlay">
-                    <div class="bento-cat">Rapid Response</div>
-                    <h3 class="bento-title">Technical Support Units</h3>
-                 </div>
-              </div>
+              <div class="gallery-row-progress"><div class="progress-bar"></div></div>
            </div>
 
-           <!-- Gallery Interactivity Script Handled by Theme Logic -->
+
+           
+           <!-- Row 4: Team in the Field -->
+           <div class="gallery-row">
+              <div class="gallery-row-title">
+                 <span>Team in the Field</span>
+                 <div class="scroll-hint">Drag to Explore <span>➔</span></div>
+              </div>
+              <div class="scroll-container">
+                 <div class="gallery-item">
+                    <img src="/assets/field/222.jpg" alt="Field Team Member">
+                    <div class="item-label">
+                       <h4>Field Ops</h4>
+                       <p>On-Site Security</p>
+                    </div>
+                 </div>
+                 <div class="gallery-item">
+                    <img src="/assets/field/444.jpg" alt="Field Supervisor">
+                    <div class="item-label">
+                       <h4>Protection</h4>
+                       <p>Active Vigilance</p>
+                    </div>
+                 </div>
+                 <div class="gallery-item">
+                    <img src="/assets/field/555.jpg" alt="Team Patrol">
+                    <div class="item-label">
+                       <h4>Patrol</h4>
+                       <p>Mobile Units</p>
+                    </div>
+                 </div>
+                 <div class="gallery-item">
+                    <img src="/assets/field/7777.jpg" alt="Security Briefing">
+                    <div class="item-label">
+                       <h4>Operations</h4>
+                       <p>Field Commands</p>
+                    </div>
+                 </div>
+                 <div class="gallery-item">
+                    <img src="/assets/field/56.jpg" alt="Command Unit">
+                    <div class="item-label">
+                       <h4>Supervision</h4>
+                       <p>Event Security</p>
+                    </div>
+                 </div>
+              </div>
+              <div class="gallery-row-progress"><div class="progress-bar"></div></div>
+           </div>
+           
+           <!-- Row 5: Executive Protection -->
+           <div class="gallery-row">
+              <div class="gallery-row-title">
+                 <span>Executive Protection</span>
+                 <div class="scroll-hint">Drag to Explore <span>➔</span></div>
+              </div>
+              <div class="scroll-container">
+                 <div class="gallery-item">
+                    <img src="/assets/executive/exec_1.jpg" alt="Executive Protection Detail">
+                    <div class="item-label">
+                       <h4>Close Protection</h4>
+                       <p>High-Profile Security</p>
+                    </div>
+                 </div>
+                 <div class="gallery-item">
+                    <img src="/assets/executive/exec_2.jpg" alt="VIP Escort">
+                    <div class="item-label">
+                       <h4>VIP Escort</h4>
+                       <p>Discreet Vigilance</p>
+                    </div>
+                 </div>
+                 <div class="gallery-item">
+                    <img src="/assets/executive/exec_3.jpg" alt="Personal Security">
+                    <div class="item-label">
+                       <h4>Personal Security</h4>
+                       <p>Threat Mitigation</p>
+                    </div>
+                 </div>
+              </div>
+              <div class="gallery-row-progress"><div class="progress-bar"></div></div>
+           </div>
+           <!-- Lightbox -->
+           <div id="lightbox">
+              <div id="lightbox-close" style="position: absolute; top: 30px; right: 40px; color: #fff; font-size: 2rem; font-weight: 300; letter-spacing: 2px; z-index: 3001; cursor: pointer;">✕</div>
+              <div id="lightbox-prev" style="position: absolute; left: 40px; color: #fff; font-size: 3rem; font-weight: 100; z-index: 3001; cursor: pointer; opacity: 0.5; transition: opacity 0.3s;">‹</div>
+              <div id="lightbox-next" style="position: absolute; right: 40px; color: #fff; font-size: 3rem; font-weight: 100; z-index: 3001; cursor: pointer; opacity: 0.5; transition: opacity 0.3s;">›</div>
+              <img src="" alt="Expanded View">
+           </div>
         </section>
 
         <!-- Consultation Section -->
@@ -359,9 +490,9 @@ export function renderMidnight(root) {
 
       <footer style="padding: 100px 10% 60px 10%; border-top: 1px solid rgba(255,255,255,0.03); background: #0a0a0c; text-align: center;">
          <div style="margin-bottom: 30px; display: flex; justify-content: center;">
-            <img src="/assets/mcso_logo_lion.png" alt="MCSO Logo" style="width: 240px; height: 240px; object-fit: contain; opacity: 0.8;">
+            <img src="/assets/mcso_star_badge.png" alt="MCSO Logo" style="width: 240px; height: 240px; object-fit: contain; opacity: 0.8;">
          </div>
-         <p style="color: #444; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;">Integrity // Trust // Honor // Respect</p>
+         <p style="color: #444; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;">RESPOND // RESPECT // RESOLVE</p>
          <p style="color: #222; font-size: 0.7rem; letter-spacing: 1px; margin-top: 40px;">&copy; 2026 MICHAEL COLON SECURITY ORGANIZATION LLC // US MILITARY VETERAN OWNED.</p>
       </footer>
 
@@ -377,12 +508,12 @@ export function renderMidnight(root) {
       const navScreen = root.querySelector('#mobile-nav-screen');
       const mobileLinks = root.querySelectorAll('.mobile-nav-link');
       const bars = [root.querySelector('.bar1'), root.querySelector('.bar2'), root.querySelector('.bar3')];
-      
+
       let menuOpen = false;
-      
+
       const toggleMenu = () => {
          menuOpen = !menuOpen;
-         if(menuOpen) {
+         if (menuOpen) {
             navScreen.style.transform = 'translateY(0)';
             navScreen.style.opacity = '1';
             bars[0].style.transform = 'translateY(8px) rotate(45deg)';
@@ -405,7 +536,7 @@ export function renderMidnight(root) {
          }
       };
 
-      if(menuToggle) {
+      if (menuToggle) {
          menuToggle.addEventListener('click', toggleMenu);
          mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
       }
@@ -434,28 +565,162 @@ export function renderMidnight(root) {
       };
 
       // Gallery Interactivity
-      if (window.innerWidth <= 768) {
-         const gallery = root.querySelector('#interactive-bento');
-         if (gallery) {
-            const frames = gallery.querySelectorAll('.bento-item');
-            frames.forEach(frame => {
-               frame.addEventListener('click', () => {
-                  frames.forEach(f => f.classList.remove('mobile-active'));
-                  frame.classList.add('mobile-active');
-               });
-            });
+      const galleryItems = Array.from(root.querySelectorAll('.gallery-item'));
+      const lightbox = root.querySelector('#lightbox');
+      const lightboxImg = root.querySelector('#lightbox img');
+      const lightboxPrev = root.querySelector('#lightbox-prev');
+      const lightboxNext = root.querySelector('#lightbox-next');
+      const lightboxClose = root.querySelector('#lightbox-close');
+      
+      let currentIndex = 0;
+      const images = galleryItems.map(item => item.querySelector('img').src);
 
+      const showImage = (index) => {
+         if (index < 0) index = images.length - 1;
+         if (index >= images.length) index = 0;
+         currentIndex = index;
+         lightboxImg.src = images[currentIndex];
+      };
+
+      if (lightbox) {
+         lightboxClose.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeLightbox();
+         });
+         
+         lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox || e.target === lightboxImg) {
+               closeLightbox();
+            }
+         });
+
+         const closeLightbox = () => {
+            lightbox.style.opacity = '0';
+            lightbox.classList.remove('active');
+            setTimeout(() => lightbox.style.display = 'none', 400);
+         };
+
+         lightboxPrev.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showImage(currentIndex - 1);
+         });
+
+         lightboxNext.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showImage(currentIndex + 1);
+         });
+
+         window.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+            if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+            if (e.key === 'Escape') closeLightbox();
+         });
+      }
+
+      const scrollContainers = root.querySelectorAll('.scroll-container');
+      scrollContainers.forEach(container => {
+         const progressBar = container.nextElementSibling?.querySelector('.progress-bar');
+         
+         const handleScroll = () => {
+            const maxScroll = container.scrollWidth - container.clientWidth;
+            const progress = maxScroll > 0 ? (container.scrollLeft / maxScroll) * 100 : 0;
+            if (progressBar) progressBar.style.width = `${progress}%`;
+            
+            const items = container.querySelectorAll('.gallery-item');
+            items.forEach(item => {
+               const img = item.querySelector('img');
+               if (!img) return;
+               
+               const itemRect = item.getBoundingClientRect();
+               const containerRect = container.getBoundingClientRect();
+               
+               const itemCenter = itemRect.left + itemRect.width / 2;
+               const containerCenter = containerRect.left + containerRect.width / 2;
+               const offset = itemCenter - containerCenter;
+               const maxOffset = containerRect.width;
+               
+               let ratio = offset / maxOffset;
+               ratio = Math.max(-1, Math.min(1, ratio));
+               
+               img.style.objectPosition = `${50 + (ratio * 15)}% 50%`;
+            });
+         };
+         
+         container.addEventListener('scroll', handleScroll, { passive: true });
+         setTimeout(handleScroll, 100);
+
+         // Desktop Drag-to-Scroll
+         let isDown = false;
+         let startX;
+         let scrollLeft;
+         
+         container.addEventListener('mousedown', (e) => {
+            isDown = true;
+            container.style.cursor = 'grabbing';
+            // Disable scroll snap while dragging for smoother feel
+            container.style.scrollSnapType = 'none';
+            startX = e.pageX - container.offsetLeft;
+            scrollLeft = container.scrollLeft;
+         });
+         
+         const stopDragging = () => {
+            isDown = false;
+            container.style.cursor = 'grab';
+            container.style.scrollSnapType = 'x mandatory';
+         };
+         
+         container.addEventListener('mouseleave', stopDragging);
+         container.addEventListener('mouseup', stopDragging);
+         
+         container.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - container.offsetLeft;
+            const walk = (x - startX) * 2; // scroll-fast multiplier
+            container.scrollLeft = scrollLeft - walk;
+         });
+      });
+
+      if (galleryItems.length > 0) {
+         galleryItems.forEach((item, index) => {
+            // Disable native image dragging so it doesn't conflict with container drag
+            const img = item.querySelector('img');
+            if (img) img.addEventListener('dragstart', (e) => e.preventDefault());
+
+            // Desktop Drag cursor styling
+            if (window.innerWidth > 768) {
+               item.style.cursor = 'grab';
+            }
+
+            item.addEventListener('click', () => {
+               if (window.innerWidth > 768 && lightbox) {
+                  showImage(index);
+                  lightbox.style.display = 'flex';
+                  void lightbox.offsetWidth; // reflow
+                  lightbox.style.opacity = '1';
+                  lightbox.classList.add('active');
+               } else {
+                  galleryItems.forEach(f => f.style.borderColor = 'rgba(229, 193, 88, 0.05)');
+                  item.style.borderColor = 'rgba(229, 193, 88, 0.8)';
+               }
+            });
+         });
+
+         if (window.innerWidth <= 768) {
             const bObserver = new IntersectionObserver((entries) => {
                entries.forEach(entry => {
                   if (entry.isIntersecting) {
-                     frames.forEach(f => f.classList.remove('mobile-active'));
-                     entry.target.classList.add('mobile-active');
+                     entry.target.style.borderColor = 'rgba(229, 193, 88, 0.8)';
+                  } else {
+                     entry.target.style.borderColor = 'rgba(229, 193, 88, 0.05)';
                   }
                });
-            }, { rootMargin: '-40% 0px -40% 0px', threshold: 0.1 });
-            frames.forEach(f => bObserver.observe(f));
+            }, { rootMargin: '0px -20% 0px -20%', threshold: 0.5 });
+            galleryItems.forEach(f => bObserver.observe(f));
          }
       }
+
    };
 
    setTimeout(initAura, 100);
