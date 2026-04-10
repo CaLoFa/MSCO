@@ -404,13 +404,6 @@ export function renderLight(root) {
                     </div>
                  </div>
                  <div class="gallery-item">
-                    <img src="/assets/field/555.jpg" alt="Team Patrol">
-                    <div class="item-label">
-                       <h4>Patrol</h4>
-                       <p>Mobile Units</p>
-                    </div>
-                 </div>
-                 <div class="gallery-item">
                     <img src="/assets/field/7777.jpg" alt="Security Briefing">
                     <div class="item-label">
                        <h4>Operations</h4>
