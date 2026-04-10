@@ -126,7 +126,7 @@ export function renderMidnight(root) {
           <!-- Chapter 1: Foundations -->
           <div class="editorial-row">
              <div class="ed-image">
-                 <img src="/assets/michael_white_shirt.jpg" alt="Michael Colon Foundations" style="object-position: center 5%;">
+                 <img src="/assets/michael_new_profile.jpg" alt="Michael Colon Foundations" style="object-position: center 20%;">
              </div>
              <div class="ed-text ed-text-alt">
                 <div style="color: #e5c158; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; margin-bottom: 25px;">01. Foundations & Service</div>
@@ -148,21 +148,33 @@ export function renderMidnight(root) {
              </div>
           </div>
 
-          <!-- Chapter 3: Vision -->
+          <!-- Chapter 3: Field Operations -->
           <div class="editorial-row">
              <div class="ed-image">
-                 <img src="/assets/michael_tactical.jpg" alt="Strategic Operations" style="object-position: center 10%;">
+                 <img src="/assets/michael_new_tactical.jpg" alt="Strategic Operations" style="object-position: center 25%;">
              </div>
              <div class="ed-text ed-text-alt">
-                <div style="color: #e5c158; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; margin-bottom: 25px;">03. The Vision</div>
+                <div style="color: #e5c158; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; margin-bottom: 25px;">03. Tactical Excellence</div>
                 <h3 style="font-size: 2.5rem; font-weight: 200; margin-bottom: 30px; line-height: 1.2;">Exceeding <span style="font-style: italic; color: #e5c158;">Expectations.</span></h3>
                 <p style="font-size: 1.1rem; color: #aaa; line-height: 1.8; font-weight: 300; margin-bottom: 20px;">While managing 33 armed security officers and onsite medical personnel at a high-end residential community, Michael dug deep into what was missing and truly needed in today's private security market.</p>
-                <p style="font-size: 1.1rem; color: #aaa; line-height: 1.8; font-weight: 300; margin-bottom: 50px;">In 2022, he opened his own firm to set a new standard in attention to detail and elite client service.</p>
+                <p style="font-size: 1.1rem; color: #aaa; line-height: 1.8; font-weight: 300; margin-bottom: 20px;">In 2022, he opened his own firm to set a new standard in attention to detail and elite client service.</p>
+             </div>
+          </div>
+
+          <!-- Chapter 4: The Benchmark -->
+          <div class="editorial-row reverse-mobile">
+             <div class="ed-text">
+                <div style="color: #e5c158; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; margin-bottom: 25px;">04. The Mission</div>
+                <h3 style="font-size: 2.5rem; font-weight: 200; margin-bottom: 30px; line-height: 1.2;">Modern <span style="font-style: italic; color: #e5c158;">Leadership.</span></h3>
+                <p style="font-size: 1.1rem; color: #aaa; line-height: 1.8; font-weight: 300; margin-bottom: 40px;">Today, Michael leads MCSO with a hands-on approach, ensuring that every deployment reflects his commitment to excellence, integrity, and client safety.</p>
                 <div style="padding-left: 30px; border-left: 2px solid #e5c158;">
                    <p style="font-size: 1.3rem; color: #fff; font-style: italic; font-family: 'Playfair Display', serif; line-height: 1.6; margin: 0;">
                       “Be the example, stand by your word and keep your promises to your employees, partners and clients.”
                    </p>
                 </div>
+             </div>
+             <div class="ed-image">
+                 <img src="/assets/michael_new_suit.jpg" alt="Modern Leadership" style="object-position: center 10%;">
              </div>
           </div>
         </section>
