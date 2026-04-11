@@ -1,6 +1,6 @@
 export function renderMidnight(root) {
    root.innerHTML = `
-    <div id="msco-aura" style="background: #0a0a0c; color: #ffffff; min-height: 100vh; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; display: flex; flex-direction: column; overflow-x: hidden; width: 100%; box-sizing: border-box;">
+    <div id="msco-aura" style="background: #0a0a0c; color: #ffffff; min-height: 100vh; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; display: flex; flex-direction: column; overflow-x: hidden; width: 100%; box-sizing: border-box; -webkit-text-size-adjust: 100%; text-size-adjust: 100%;">
       
       <!-- Progress Bar -->
       <div id="scroll-progress" style="position: fixed; top: 0; left: 0; height: 3px; background: #e5c158; width: 0%; z-index: 1001; transition: width 0.1s;"></div>
