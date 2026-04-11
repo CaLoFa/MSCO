@@ -7,7 +7,7 @@ app.innerHTML = '<div id="theme-root"></div>';
 
 const root = document.getElementById('theme-root');
 
-if (window.location.pathname === '/light' || window.location.pathname === '/light/') {
+if (window.location.pathname.endsWith('/light') || window.location.pathname.endsWith('/light/')) {
   renderLight(root);
 } else {
   renderMidnight(root);
