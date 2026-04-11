@@ -1,12 +1,12 @@
 export function renderLight(root) {
    root.innerHTML = `
-    <div id="msco-aura" style="background: #ffffff; color: #0a0a0c; min-height: 100vh; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; display: flex; flex-direction: column; overflow-x: hidden;">
+    <div id="msco-aura" style="background: #ffffff; color: #0a0a0c; min-height: 100vh; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; display: flex; flex-direction: column; overflow-x: hidden; width: 100%; box-sizing: border-box;">
       
       <!-- Progress Bar -->
       <div id="scroll-progress" style="position: fixed; top: 0; left: 0; height: 3px; background: #e5c158; width: 0%; z-index: 1001; transition: width 0.1s;"></div>
 
        <!-- Minimal Sticky Header -->
-      <header id="main-header" style="padding: 10px 60px; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; box-sizing: border-box; z-index: 2000; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0, 0, 0, 0.05); transition: all 0.3s ease;">
+      <header id="main-header" style="padding: 10px 5%; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; box-sizing: border-box; z-index: 2000; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0, 0, 0, 0.05); transition: all 0.3s ease;">
         <div style="cursor: pointer; width: 100px; height: 100px; display: flex; align-items: center;" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
           <img src="/assets/mcso_star_badge.png" alt="MCSO Logo" style="width: 100%; height: 100%; object-fit: contain; filter: invert(0);">
         </div>
@@ -61,7 +61,8 @@ export function renderLight(root) {
                .hero-section-padding { padding: 0 20px !important; }
                .hero-cta-container { flex-direction: column !important; gap: 15px !important; align-items: center; width: 100%; }
                .hero-cta-container a { width: 100%; padding: 18px 0 !important; max-width: 280px; }
-               .consultation-grid { grid-template-columns: 1fr !important; gap: 40px !important; padding: 40px !important; }
+               .consultation-grid { grid-template-columns: 1fr !important; gap: 40px !important; padding: 40px 20px !important; }
+               section { padding: 100px 0 0 0 !important; }
                @keyframes heroZoom { from { transform: scale(1.05); } to { transform: scale(1.15); } }
             }
           </style>
@@ -95,7 +96,7 @@ export function renderLight(root) {
           <!-- decorative blur element -->
           <div style="position: absolute; top: 0; left: 0; width: 600px; height: 600px; background: radial-gradient(circle, rgba(201,165,61,0.05) 0%, transparent 60%); filter: blur(60px); pointer-events: none;"></div>
           
-          <div style="max-width: 1400px; margin: 0 auto; padding: 0 10%; position: relative; z-index: 2;">
+          <div style="max-width: 1400px; margin: 0 auto; padding: 0 10%; position: relative; z-index: 2; width: 100%; box-sizing: border-box;">
              <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 40px;">
                 <div style="height: 1px; width: 60px; background: rgba(201,165,61,0.5);"></div>
                 <div style="color: #c9a53d; font-size: 0.75rem; letter-spacing: 5px; text-transform: uppercase; font-weight: 700;">The Legacy</div>
@@ -180,8 +181,8 @@ export function renderLight(root) {
         </section>
 
         <!-- Services Section -->
-        <section id="pathways" style="padding: 150px 10%; background: #ffffff; border-top: 1px solid rgba(0,0,0,0.03);">
-           <div style="max-width: 1400px; margin: 0 auto;">
+        <section id="pathways" style="padding: 150px 10%; background: #ffffff; border-top: 1px solid rgba(0,0,0,0.03); width: 100%; box-sizing: border-box;">
+           <div style="max-width: 1400px; margin: 0 auto; width: 100%; box-sizing: border-box;">
               <header style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 100px; gap: 60px; flex-wrap: wrap;">
                  <div style="max-width: 600px;">
                     <div style="color: #c9a53d; font-size: 0.8rem; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 25px; font-weight: 700;">Security Solutions</div>
