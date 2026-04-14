@@ -243,7 +243,7 @@ export function renderMidnight(root) {
                        <div class="service-tag">High Level</div>
                        <h3>Executive Protection <br/>& Bodyguard Services</h3>
                        <p>Discreet, multi-layered protection for executives, high-profile individuals, and private clients. We focus on risk mitigation and seamless mobility.</p>
-                       <div class="service-cta">View Gallery ➔</div>
+                       <div class="service-cta">Get a Quote ➔</div>
                     </div>
                  </div>
 
@@ -254,7 +254,7 @@ export function renderMidnight(root) {
                        <div class="service-tag">Domestic</div>
                        <h3>Residential Property <br/>Protection</h3>
                        <p>Ensuring absolute peace of mind for residents through elite onsite security and community patrol services.</p>
-                       <div class="service-cta">View Gallery ➔</div>
+                       <div class="service-cta">Get a Quote ➔</div>
                     </div>
                  </div>
 
@@ -265,7 +265,7 @@ export function renderMidnight(root) {
                        <div class="service-tag">Corporate</div>
                        <h3>Commercial & Industrial <br/>Security</h3>
                        <p>Scalable infrastructure security for corporate campuses, medical facilities, and high-end retail establishments.</p>
-                       <div class="service-cta">View Gallery ➔</div>
+                       <div class="service-cta">Get a Quote ➔</div>
                     </div>
                  </div>
 
@@ -276,7 +276,7 @@ export function renderMidnight(root) {
                        <div class="service-tag">Special Ops</div>
                        <h3>Special Events <br/>& Crowd Management</h3>
                        <p>Professional event security coordination ensuring safety and order for large-scale gatherings and high-stakes venues.</p>
-                       <div class="service-cta">View Gallery ➔</div>
+                       <div class="service-cta">Get a Quote ➔</div>
                     </div>
                  </div>
               </div>
