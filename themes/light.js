@@ -73,7 +73,7 @@ export function renderLight(root) {
           
           <div style="position: relative; z-index: 2; text-align: center; padding: 0 20px; max-width: 1000px; width: 100%;">
             <div class="hero-subtitle" style="color: #c9a53d; font-size: 0.8rem; letter-spacing: 6px; text-transform: uppercase; margin-bottom: 40px; font-weight: 600; opacity: 0; animation: fadeInUp 1s forwards 0.5s;">
-               Professional Security Services
+               ${siteData.hero.subtitle}
             </div>
             <h1 style="font-size: 5.5rem; font-weight: 200; line-height: 1.1; margin-bottom: 40px; letter-spacing: -3px; opacity: 0; animation: fadeInUp 1s forwards 0.8s; color: #0a0a0c;">
               The Standard of <br>
@@ -109,8 +109,8 @@ export function renderLight(root) {
           <style>
              .editorial-row { display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; margin-bottom: 0; }
              .ed-image { min-height: 750px; position: relative; overflow: hidden; }
-             .ed-image img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) brightness(1.1); transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1); position: absolute; inset: 0; }
-             .editorial-row:hover .ed-image img { filter: grayscale(0%) brightness(1); transform: scale(1.05); }
+             .ed-image img { width: 100%; height: 100%; object-fit: cover; filter: brightness(1.1); transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1); position: absolute; inset: 0; }
+             .editorial-row:hover .ed-image img { filter: brightness(1.15); transform: scale(1.05); }
              .ed-text { padding: 100px 10%; display: flex; flex-direction: column; justify-content: center; background: #ffffff; border-bottom: 1px solid rgba(0,0,0,0.03); border-top: 1px solid rgba(0,0,0,0.03); }
              .ed-text-alt { background: #fafafa; }
              
@@ -205,8 +205,8 @@ export function renderLight(root) {
                  .service-card.medium { grid-column: span 4; height: 600px; }
                  .service-card.small { grid-column: span 6; height: 500px; }
                  
-                 .service-card .card-img { position: absolute; inset: 0; filter: grayscale(100%) brightness(1.1); transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1); opacity: 0.7; }
-                 .service-card:hover .card-img { filter: grayscale(0%) brightness(1); transform: scale(1.05); opacity: 1; }
+                 .service-card .card-img { position: absolute; inset: 0; filter: brightness(1.1); transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1); opacity: 0.8; }
+                 .service-card:hover .card-img { filter: brightness(1.15); transform: scale(1.05); opacity: 1; }
                  
                  .card-content { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.4) 50%, transparent 100%); padding: 50px; display: flex; flex-direction: column; justify-content: flex-end; z-index: 2; transition: all 0.6s ease; }
                  .service-card:hover .card-content { background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.2) 100%); }
@@ -237,46 +237,46 @@ export function renderLight(root) {
 
               <div class="services-container">
                  <!-- Card 1: Executive Protection (Large) -->
-                 <div class="service-card large" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })">
+                 <div class="service-card large" onclick="document.getElementById('lookbook').scrollIntoView({ behavior: 'smooth' })">
                     <div class="card-img" style="background: url('/assets/executive/exec_1.jpg') center/cover;"></div>
                     <div class="card-content">
                        <div class="service-tag">High Level</div>
                        <h3>Executive Protection <br/>& Bodyguard Services</h3>
                        <p>Discreet, multi-layered protection for executives, high-profile individuals, and private clients. We focus on risk mitigation and seamless mobility.</p>
-                       <div class="service-cta">Inquire Now ➔</div>
+                       <div class="service-cta">View Gallery ➔</div>
                     </div>
                  </div>
 
                  <!-- Card 2: Residential (Medium) -->
-                 <div class="service-card medium" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })">
+                 <div class="service-card medium" onclick="document.getElementById('lookbook').scrollIntoView({ behavior: 'smooth' })">
                     <div class="card-img" style="background: url('/assets/fleet/fleet_5.jpg') center/cover;"></div>
                     <div class="card-content">
                        <div class="service-tag">Domestic</div>
                        <h3>Residential Property <br/>Protection</h3>
                        <p>Ensuring absolute peace of mind for residents through elite onsite security and community patrol services.</p>
-                       <div class="service-cta">Inquire Now ➔</div>
+                       <div class="service-cta">View Gallery ➔</div>
                     </div>
                  </div>
 
                  <!-- Card 3: Commercial (Small) -->
-                 <div class="service-card small" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })">
+                 <div class="service-card small" onclick="document.getElementById('lookbook').scrollIntoView({ behavior: 'smooth' })">
                     <div class="card-img" style="background: url('/assets/fleet/fleet_4.jpg') center/cover;"></div>
                     <div class="card-content">
                        <div class="service-tag">Corporate</div>
                        <h3>Commercial & Industrial <br/>Security</h3>
                        <p>Scalable infrastructure security for corporate campuses, medical facilities, and high-end retail establishments.</p>
-                       <div class="service-cta">Inquire Now ➔</div>
+                       <div class="service-cta">View Gallery ➔</div>
                     </div>
                  </div>
 
                  <!-- Card 4: Event Security (Small) -->
-                 <div class="service-card small" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })">
+                 <div class="service-card small" onclick="document.getElementById('lookbook').scrollIntoView({ behavior: 'smooth' })">
                     <div class="card-img" style="background: url('/assets/field/56.jpg') center/cover;"></div>
                     <div class="card-content">
                        <div class="service-tag">Special Ops</div>
                        <h3>Special Events <br/>& Crowd Management</h3>
                        <p>Professional event security coordination ensuring safety and order for large-scale gatherings and high-stakes venues.</p>
-                       <div class="service-cta">Inquire Now ➔</div>
+                       <div class="service-cta">View Gallery ➔</div>
                     </div>
                  </div>
               </div>
@@ -305,8 +305,8 @@ export function renderLight(root) {
              
              .gallery-item { flex: 0 0 450px; height: 600px; scroll-snap-align: start; position: relative; border-radius: 4px; overflow: hidden; transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); cursor: pointer; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 20px 40px rgba(0,0,0,0.03); }
              .gallery-item:hover { border-color: rgba(201, 165, 61, 0.4); transform: translateY(-10px); box-shadow: 0 40px 80px rgba(0,0,0,0.08); }
-             .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), filter 1.2s ease; filter: contrast(1.1) brightness(1); }
-             .gallery-item:hover img { transform: scale(1.05); filter: contrast(1.1) brightness(1.05); }
+             .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), filter 1.2s ease; filter: contrast(1) brightness(1); }
+             .gallery-item:hover img { transform: scale(1.1); filter: contrast(1.05) brightness(1.05); }
              
              .item-label { position: absolute; bottom: 0; left: 0; right: 0; padding: 40px; background: linear-gradient(to top, rgba(255,255,255,0.95) 0%, transparent 100%); transform: translateY(20px); opacity: 0; transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); pointer-events: none; }
              .gallery-item:hover .item-label { transform: translateY(0); opacity: 1; }
@@ -353,7 +353,11 @@ export function renderLight(root) {
               <div id="lightbox-close" style="position: absolute; top: 30px; right: 40px; color: #0a0a0c; font-size: 2rem; font-weight: 300; letter-spacing: 2px; z-index: 3001; cursor: pointer;">✕</div>
               <div id="lightbox-prev" style="position: absolute; left: 40px; color: #0a0a0c; font-size: 3rem; font-weight: 100; z-index: 3001; cursor: pointer; opacity: 0.5; transition: opacity 0.3s;">‹</div>
               <div id="lightbox-next" style="position: absolute; right: 40px; color: #0a0a0c; font-size: 3rem; font-weight: 100; z-index: 3001; cursor: pointer; opacity: 0.5; transition: opacity 0.3s;">›</div>
-              <img src="" alt="Expanded View">
+               <img src="" alt="Expanded View">
+               <div id="lightbox-info" style="position: absolute; bottom: 50px; left: 50%; transform: translateX(-50%); text-align: center; color: #0a0a0c; width: 80%; max-width: 600px; pointer-events: none;">
+                  <h4 id="lightbox-label" style="color: #c9a53d; font-size: 0.8rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 15px; font-weight: 800;"></h4>
+                  <p id="lightbox-desc" style="font-size: 1.5rem; font-weight: 300; letter-spacing: 1px; margin: 0;"></p>
+               </div>
            </div>
         </section>
 
@@ -367,8 +371,8 @@ export function renderLight(root) {
                     Contact us today for a professional review of your security needs and a personalized protection plan.
                  </p>
                  <div style="display: flex; flex-direction: column; gap: 15px;">
-                    <div style="font-size: 2rem; font-weight: 300; color: #0a0a0c; letter-spacing: 1px;">561-722-2209</div>
-                    <div style="font-size: 0.9rem; color: #999; letter-spacing: 3px; text-transform: uppercase;">Boynton Beach, FL</div>
+                     <div style="font-size: 2rem; font-weight: 300; color: #0a0a0c; letter-spacing: 1px;">${siteData.contact.phone}</div>
+                     <div style="font-size: 0.9rem; color: #999; letter-spacing: 3px; text-transform: uppercase;">${siteData.contact.location}</div>
                  </div>
               </div>
               
@@ -396,7 +400,7 @@ export function renderLight(root) {
          <div style="margin-bottom: 30px; display: flex; justify-content: center;">
             <img src="/assets/mcso_star_badge_new.png" alt="MCSO Logo" style="width: 240px; height: 240px; object-fit: contain; opacity: 0.8; filter: invert(0);">
          </div>
-         <p style="color: #999; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;">RESPOND // RESPECT // RESOLVE</p>
+         <p style="color: #999; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;">LICENSED & INSURED IN FLORIDA & NEW YORK // RESPOND // RESPECT // RESOLVE</p>
          <p style="color: #bbb; font-size: 0.7rem; letter-spacing: 1px; margin-top: 40px;">&copy; 2026 MICHAEL COLON SECURITY ORGANIZATION LLC // US MILITARY VETERAN OWNED.</p>
       </footer>
 
@@ -479,12 +483,22 @@ export function renderLight(root) {
       let currentIndex = 0;
       const images = galleryItems.map(item => item.querySelector('img').src);
 
-      const showImage = (index) => {
-         if (index < 0) index = images.length - 1;
-         if (index >= images.length) index = 0;
-         currentIndex = index;
-         lightboxImg.src = images[currentIndex];
-      };
+       const showImage = (index) => {
+          if (index < 0) index = images.length - 1;
+          if (index >= images.length) index = 0;
+          currentIndex = index;
+          
+          const currentItem = galleryItems[currentIndex];
+          const img = currentItem.querySelector('img');
+          const label = currentItem.querySelector('.item-label h4')?.innerText || '';
+          const desc = currentItem.querySelector('.item-label p')?.innerText || '';
+          
+          lightboxImg.src = img.src;
+          const lbLabel = root.querySelector('#lightbox-label');
+          const lbDesc = root.querySelector('#lightbox-desc');
+          if (lbLabel) lbLabel.innerText = label;
+          if (lbDesc) lbDesc.innerText = desc;
+       };
 
       if (lightbox) {
          lightboxClose.addEventListener('click', (e) => {

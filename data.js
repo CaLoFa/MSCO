@@ -1,6 +1,6 @@
 export const siteData = {
   hero: {
-    subtitle: "Professional Security Services",
+    subtitle: "Licensed & Insured // Florida & New York",
     title: "The Standard of <br> <span style=\"font-style: italic; font-family: 'Playfair Display', serif; color: #e5c158; font-weight: 400;\">Professional Protection.</span>",
     description: "Veteran-owned and operated. We provide comprehensive private security solutions built on reliability, detailed planning, and steadfast commitment to our clients."
   },
@@ -87,11 +87,19 @@ export const siteData = {
           { src: "/assets/fleet/fleet_3.jpg", label: "Command Response", desc: "Dedicated Vehicles" },
           { src: "/assets/fleet/fleet_4.jpg", label: "Night Operations", desc: "24/7 Vigilance" },
           { src: "/assets/fleet/fleet_1.jpg", label: "Mobile Units", desc: "Versatile Deployment" },
-          { src: "/assets/fleet/fleet_2.jpg", label: "Transport", desc: "Secure Escorts" }
+          { src: "/assets/fleet/fleet_2.jpg", label: "Transport", desc: "Secure Escorts" },
+          { src: "/assets/fleet/fleet_6.jpg", label: "PPU-1", desc: "Patrol Pursuit Unit" },
+          { src: "/assets/fleet/fleet_7.jpg", label: "Operations", desc: "Field Performance" },
+          { src: "/assets/fleet/fleet_8.jpg", label: "Precision", desc: "Fleet Aesthetics" },
+          { src: "/assets/fleet/fleet_9.jpg", label: "Response", desc: "Rapid Deployment" },
+          { src: "/assets/fleet/fleet_10.jpg", label: "Night Patrol", desc: "24/7 Security" },
+          { src: "/assets/fleet_convoy_1769556157064.png", label: "Convoy", desc: "Coordinated tactical movement" },
+          { src: "/assets/fleet_suv_front_1769556132620.png", label: "SUV Front", desc: "Heavy-duty response vehicle" },
+          { src: "/assets/fleet_sedan_side_1769556143358.png", label: "Patrol Sedan", desc: "Active patrol unit profile" }
         ]
       },
       {
-        name: "Team in the Field",
+        name: "Meet the Team",
         items: [
           { src: "/assets/field/222.jpg", label: "Field Ops", desc: "On-Site Security" },
           { src: "/assets/field/444.jpg", label: "Field Supervisor", desc: "Protection" },
@@ -103,38 +111,36 @@ export const siteData = {
           { src: "/assets/field/Screenshot_20220829-205021_Photos.jpg", label: "Team Deployment", desc: "Security Post" },
           { src: "/assets/field/Screenshot_20221018-212456_PicCollage.jpg", label: "Operations Gallery", desc: "Team Photos" },
           { src: "/assets/field/Screenshot_20240919_073152_Photos.jpg", label: "Night Patrol", desc: "Security Guard" },
-          { src: "/assets/field/Screenshot_20240923_160301_Photos.jpg", label: "Active Watch", desc: "Field Supervision" }
+          { src: "/assets/field/Screenshot_20240923_160301_Photos.jpg", label: "Active Watch", desc: "Field Supervision" },
+          { src: "/assets/field/AISelect_20250630_190149_Photos.jpg", label: "Team Ops", desc: "Field Operations" },
+          { src: "/assets/field/Screenshot_20240601-153853_Photos~2.jpg", label: "Team Detail", desc: "Security Briefing" },
+          { src: "/assets/field/Screenshot_20250427_142445_Photos.jpg", label: "Field Watch", desc: "On-Site Monitoring" },
+          { src: "/assets/field/Screenshot_20250427_142456_Photos.jpg", label: "Command Post", desc: "Team Coordination" },
+          { src: "/assets/field/Screenshot_20250630_185918_Photos.jpg", label: "Night Ops", desc: "24/7 Protection" },
+          { src: "/assets/field/Screenshot_20250630_190140_Photos.jpg", label: "Strategic Post", desc: "Field Supervision" }
         ]
       },
       {
-        name: "Operations & Field Work",
-        items: [
-          { src: "/assets/field/20230316_180840.jpg", label: "On-Site", desc: "Security Operations" },
-          { src: "/assets/field/AISelect_20250522_140326_Instagram.jpg", label: "Instagram", desc: "Featured Post" },
-          { src: "/assets/field/IMG_20230319_230634_236.jpg", label: "Field Ops", desc: "Security Detail" },
-          { src: "/assets/field/Screenshot_20190610-230132_Photos~3.jpg", label: "Historical", desc: "Past Deployment" },
-          { src: "/assets/field/Screenshot_20230329-211508_Photos.jpg", label: "Field Deployment", desc: "Active Duty" },
-          { src: "/assets/field/Screenshot_20230403-231452_Photos.jpg", label: "Night Watch", desc: "24/7 Security" },
-          { src: "/assets/field/Screenshot_20241212_020437_Photos.jpg", label: "Site Patrol", desc: "Evening Operations" },
-          { src: "/assets/field/Screenshot_20241212_021617_Photos.png", label: "Security Log", desc: "Operational Overview" },
-          { src: "/assets/field/Screenshot_20250630_185746_Photos.jpg", label: "Tactical Ops", desc: "Field Work" },
-          { src: "/assets/field/Screenshot_20250630_190022_Photos.jpg", label: "Response Team", desc: "Deployment" },
-          { src: "/assets/field/Screenshot_20260222_080411_Photos.jpg", label: "Monitoring", desc: "Security Systems" },
-          { src: "/assets/field/Screenshot_20260228_121121_Photos.jpg", label: "Team Briefing", desc: "Pre-Deployment" }
-        ]
-      },
-      {
-        name: "Executive Protection",
+        name: "Executive Protection & Operations",
         items: [
           { src: "/assets/executive/exec_1.jpg", label: "Close Protection", desc: "High-Profile Security" },
           { src: "/assets/executive/exec_2.jpg", label: "VIP Escort", desc: "Discreet Vigilance" },
-          { src: "/assets/executive/exec_3.jpg", label: "Personal Security", desc: "Threat Mitigation" }
+          { src: "/assets/executive/exec_3.jpg", label: "Personal Security", desc: "Threat Mitigation" },
+          { src: "/assets/field/IMG_20230319_230634_236.jpg", label: "Field Ops", desc: "Security Detail" },
+          { src: "/assets/field/Screenshot_20230329-211520_Photos.jpg", label: "Operations", desc: "Security Detail" },
+          { src: "/assets/field/Screenshot_20230329-211508_Photos.jpg", label: "Operations", desc: "Security Detail" },
+          { src: "/assets/field/Screenshot_20241129_012440_Photos.jpg", label: "Security", desc: "Security Detail" },
+          { src: "/assets/field/Screenshot_20230403-231452_Photos.jpg", label: "Night Watch", desc: "24/7 Security" },
+          { src: "/assets/field/Screenshot_20241212_021617_Photos.png", label: "Security Log", desc: "Operational Overview" },
+          { src: "/assets/field/Screenshot_20250630_185746_Photos.jpg", label: "Tactical Ops", desc: "Field Work" },
+          { src: "/assets/field/Screenshot_20250630_190022_Photos.jpg", label: "Response Team", desc: "Deployment" },
+          { src: "/assets/field/Screenshot_20260222_080411_Photos.jpg", label: "Monitoring", desc: "Security Systems" }
         ]
       }
     ]
   },
   contact: {
     phone: "561-722-2209",
-    location: "Boynton Beach, FL"
+    location: "Licensed & Insured in Florida & New York"
   }
 };
