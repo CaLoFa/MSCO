@@ -109,8 +109,8 @@ export function renderMidnight(root) {
           <style>
              .editorial-row { display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; margin-bottom: 0; }
              .ed-image { min-height: 750px; position: relative; overflow: hidden; }
-             .ed-image img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.85); transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1); position: absolute; inset: 0; }
-             .editorial-row:hover .ed-image img { filter: brightness(1); transform: scale(1.05); }
+             .ed-image img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) brightness(0.85); transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1); position: absolute; inset: 0; }
+             .editorial-row:hover .ed-image img { filter: grayscale(0%) brightness(1); transform: scale(1.05); }
              .ed-text { padding: 100px 10%; display: flex; flex-direction: column; justify-content: center; background: #0a0a0c; border-bottom: 1px solid rgba(255,255,255,0.03); border-top: 1px solid rgba(255,255,255,0.03); }
              .ed-text-alt { background: #0d0d10; }
              

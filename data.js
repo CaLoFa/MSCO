@@ -93,9 +93,6 @@ export const siteData = {
           { src: "/assets/fleet/fleet_8.jpg", label: "Precision", desc: "Fleet Aesthetics" },
           { src: "/assets/fleet/fleet_9.jpg", label: "Response", desc: "Rapid Deployment" },
           { src: "/assets/fleet/fleet_10.jpg", label: "Night Patrol", desc: "24/7 Security" },
-          { src: "/assets/fleet_convoy_1769556157064.png", label: "Convoy", desc: "Coordinated tactical movement" },
-          { src: "/assets/fleet_suv_front_1769556132620.png", label: "SUV Front", desc: "Heavy-duty response vehicle" },
-          { src: "/assets/fleet_sedan_side_1769556143358.png", label: "Patrol Sedan", desc: "Active patrol unit profile" }
         ]
       },
       {
@@ -113,11 +110,7 @@ export const siteData = {
           { src: "/assets/field/Screenshot_20240919_073152_Photos.jpg", label: "Night Patrol", desc: "Security Guard" },
           { src: "/assets/field/Screenshot_20240923_160301_Photos.jpg", label: "Active Watch", desc: "Field Supervision" },
           { src: "/assets/field/AISelect_20250630_190149_Photos.jpg", label: "Team Ops", desc: "Field Operations" },
-          { src: "/assets/field/Screenshot_20240601-153853_Photos~2.jpg", label: "Team Detail", desc: "Security Briefing" },
-          { src: "/assets/field/Screenshot_20250427_142445_Photos.jpg", label: "Field Watch", desc: "On-Site Monitoring" },
-          { src: "/assets/field/Screenshot_20250427_142456_Photos.jpg", label: "Command Post", desc: "Team Coordination" },
-          { src: "/assets/field/Screenshot_20250630_185918_Photos.jpg", label: "Night Ops", desc: "24/7 Protection" },
-          { src: "/assets/field/Screenshot_20250630_190140_Photos.jpg", label: "Strategic Post", desc: "Field Supervision" }
+          { src: "/assets/field/Screenshot_20250630_185918_Photos.jpg", label: "Night Ops", desc: "24/7 Protection" }
         ]
       },
       {
