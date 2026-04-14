@@ -237,7 +237,7 @@ export function renderMidnight(root) {
 
               <div class="services-container">
                  <!-- Card 1: Executive Protection (Large) -->
-                 <div class="service-card large" onclick="document.getElementById('lookbook').scrollIntoView({ behavior: 'smooth' })">
+                 <div class="service-card large" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })">
                     <div class="card-img" style="background: url('/assets/executive/exec_1.jpg') center/cover;"></div>
                     <div class="card-content">
                        <div class="service-tag">High Level</div>
@@ -248,7 +248,7 @@ export function renderMidnight(root) {
                  </div>
 
                  <!-- Card 2: Residential (Medium) -->
-                 <div class="service-card medium" onclick="document.getElementById('lookbook').scrollIntoView({ behavior: 'smooth' })">
+                 <div class="service-card medium" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })">
                     <div class="card-img" style="background: url('/assets/fleet/fleet_5.jpg') center/cover;"></div>
                     <div class="card-content">
                        <div class="service-tag">Domestic</div>
@@ -259,7 +259,7 @@ export function renderMidnight(root) {
                  </div>
 
                  <!-- Card 3: Commercial (Small) -->
-                 <div class="service-card small" onclick="document.getElementById('lookbook').scrollIntoView({ behavior: 'smooth' })">
+                 <div class="service-card small" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })">
                     <div class="card-img" style="background: url('/assets/fleet/fleet_4.jpg') center/cover;"></div>
                     <div class="card-content">
                        <div class="service-tag">Corporate</div>
@@ -270,7 +270,7 @@ export function renderMidnight(root) {
                  </div>
 
                  <!-- Card 4: Event Security (Small) -->
-                 <div class="service-card small" onclick="document.getElementById('lookbook').scrollIntoView({ behavior: 'smooth' })">
+                 <div class="service-card small" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })">
                     <div class="card-img" style="background: url('/assets/field/56.jpg') center/cover;"></div>
                     <div class="card-content">
                        <div class="service-tag">Special Ops</div>
