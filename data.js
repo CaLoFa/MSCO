@@ -37,8 +37,8 @@ export const siteData = {
         title: "Modern <span style=\"font-style: italic; color: #e5c158;\">Leadership.</span>",
         description: "Today, Michael leads MCSO with a hands-on approach, ensuring that every deployment reflects his commitment to excellence, integrity, and client safety.",
         quote: "“Be the example, stand by your word and keep your promises to your employees, partners and clients.”",
-        image: "/assets/michael_new_suit.jpg",
-        imagePos: "center 10%"
+        image: "/assets/michael_modern_leadership.jpg",
+        imagePos: "center 20%"
       }
     ]
   },
@@ -96,7 +96,31 @@ export const siteData = {
           { src: "/assets/field/222.jpg", label: "Field Ops", desc: "On-Site Security" },
           { src: "/assets/field/444.jpg", label: "Field Supervisor", desc: "Protection" },
           { src: "/assets/field/7777.jpg", label: "Operations", desc: "Field Commands" },
-          { src: "/assets/field/56.jpg", label: "Supervision", desc: "Event Security" }
+          { src: "/assets/field/56.jpg", label: "Supervision", desc: "Event Security" },
+          { src: "/assets/field/20220817_102436.jpg", label: "Field Team", desc: "Security Detail" },
+          { src: "/assets/field/20240911_134350-2.jpeg", label: "Operational Briefing", desc: "Team Brief" },
+          { src: "/assets/field/65.jpg", label: "On-Site Security", desc: "Field Work" },
+          { src: "/assets/field/Screenshot_20220829-205021_Photos.jpg", label: "Team Deployment", desc: "Security Post" },
+          { src: "/assets/field/Screenshot_20221018-212456_PicCollage.jpg", label: "Operations Gallery", desc: "Team Photos" },
+          { src: "/assets/field/Screenshot_20240919_073152_Photos.jpg", label: "Night Patrol", desc: "Security Guard" },
+          { src: "/assets/field/Screenshot_20240923_160301_Photos.jpg", label: "Active Watch", desc: "Field Supervision" }
+        ]
+      },
+      {
+        name: "Operations & Field Work",
+        items: [
+          { src: "/assets/field/20230316_180840.jpg", label: "On-Site", desc: "Security Operations" },
+          { src: "/assets/field/AISelect_20250522_140326_Instagram.jpg", label: "Instagram", desc: "Featured Post" },
+          { src: "/assets/field/IMG_20230319_230634_236.jpg", label: "Field Ops", desc: "Security Detail" },
+          { src: "/assets/field/Screenshot_20190610-230132_Photos~3.jpg", label: "Historical", desc: "Past Deployment" },
+          { src: "/assets/field/Screenshot_20230329-211508_Photos.jpg", label: "Field Deployment", desc: "Active Duty" },
+          { src: "/assets/field/Screenshot_20230403-231452_Photos.jpg", label: "Night Watch", desc: "24/7 Security" },
+          { src: "/assets/field/Screenshot_20241212_020437_Photos.jpg", label: "Site Patrol", desc: "Evening Operations" },
+          { src: "/assets/field/Screenshot_20241212_021617_Photos.png", label: "Security Log", desc: "Operational Overview" },
+          { src: "/assets/field/Screenshot_20250630_185746_Photos.jpg", label: "Tactical Ops", desc: "Field Work" },
+          { src: "/assets/field/Screenshot_20250630_190022_Photos.jpg", label: "Response Team", desc: "Deployment" },
+          { src: "/assets/field/Screenshot_20260222_080411_Photos.jpg", label: "Monitoring", desc: "Security Systems" },
+          { src: "/assets/field/Screenshot_20260228_121121_Photos.jpg", label: "Team Briefing", desc: "Pre-Deployment" }
         ]
       },
       {

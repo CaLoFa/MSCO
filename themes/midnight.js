@@ -1,3 +1,5 @@
+import { siteData } from '../data.js'
+
 export function renderMidnight(root) {
    root.innerHTML = `
     <div id="msco-aura" style="background: #0a0a0c; color: #ffffff; min-height: 100vh; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; display: flex; flex-direction: column; overflow-x: hidden; width: 100%; box-sizing: border-box; -webkit-text-size-adjust: 100%; text-size-adjust: 100%;">
@@ -8,7 +10,7 @@ export function renderMidnight(root) {
        <!-- Minimal Sticky Header -->
       <header id="main-header" style="padding: 10px 5%; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; box-sizing: border-box; z-index: 2000; background: rgba(10, 10, 12, 0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.3s ease;">
         <div style="cursor: pointer; width: 100px; height: 100px; display: flex; align-items: center;" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-          <img src="/assets/mcso_star_badge.png" alt="MCSO Logo" style="width: 100%; height: 100%; object-fit: contain;">
+          <img src="/assets/mcso_star_badge_new.png" alt="MCSO Logo" style="width: 100%; height: 100%; object-fit: contain;">
         </div>
         
         <nav id="main-nav" class="desktop-nav" style="display: flex; gap: 40px; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; align-items: center;">
@@ -131,7 +133,7 @@ export function renderMidnight(root) {
              </div>
              <div class="ed-text ed-text-alt">
                 <div style="color: #e5c158; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; margin-bottom: 25px;">01. Foundations & Service</div>
-                <h3 style="font-size: 2.5rem; font-weight: 200; margin-bottom: 30px; line-height: 1.2;">A Calling for <span style="font-style: italic; color: #e5c158;">Service.</span></h3>
+                <h3 style="font-size: 2.5rem; font-weight: 200; margin-bottom: 30px; line-height: 1.2; text-align: center;">A Calling for <span style="font-style: italic; color: #e5c158;">Service.</span></h3>
                 <p style="font-size: 1.1rem; color: #aaa; line-height: 1.8; font-weight: 300;">Michael Colon was born in Brooklyn, NY and came from humble beginnings. After enlisting at 19 years old and honorably serving our country in the United States Navy, Michael had his professional trajectory in focus, starting his career in high-profile Executive Protection.</p>
              </div>
           </div>
@@ -140,7 +142,7 @@ export function renderMidnight(root) {
           <div class="editorial-row reverse-mobile">
              <div class="ed-text">
                 <div style="color: #e5c158; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; margin-bottom: 25px;">02. Law Enforcement</div>
-                <h3 style="font-size: 2.5rem; font-weight: 200; margin-bottom: 30px; line-height: 1.2;">Natural Born <span style="font-style: italic; color: #e5c158;">Leader.</span></h3>
+                <h3 style="font-size: 2.5rem; font-weight: 200; margin-bottom: 30px; line-height: 1.2; text-align: center;">Natural Born <span style="font-style: italic; color: #e5c158;">Leader.</span></h3>
                 <p style="font-size: 1.1rem; color: #aaa; line-height: 1.8; font-weight: 300; margin-bottom: 20px;">At 36 years old, Michael joined the New York City Police Department's Aux Division. Seen by his superiors as a natural born leader, he was shortly thereafter promoted to the rank of sergeant, then lieutenant.</p>
                 <p style="font-size: 1.1rem; color: #aaa; line-height: 1.8; font-weight: 300;">As the Executive Officer in charge, Michael oversaw all-aux patrol officers of Manhattan North’s 23rd Precinct before transitioning to South Florida as a security manager at a major retailer corporate campus.</p>
              </div>
@@ -156,7 +158,7 @@ export function renderMidnight(root) {
              </div>
              <div class="ed-text ed-text-alt">
                 <div style="color: #e5c158; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; margin-bottom: 25px;">03. Tactical Excellence</div>
-                <h3 style="font-size: 2.5rem; font-weight: 200; margin-bottom: 30px; line-height: 1.2;">Exceeding <span style="font-style: italic; color: #e5c158;">Expectations.</span></h3>
+                <h3 style="font-size: 2.5rem; font-weight: 200; margin-bottom: 30px; line-height: 1.2; text-align: center;">Exceeding <span style="font-style: italic; color: #e5c158;">Expectations.</span></h3>
                 <p style="font-size: 1.1rem; color: #aaa; line-height: 1.8; font-weight: 300; margin-bottom: 20px;">While managing 33 armed security officers and onsite medical personnel at a high-end residential community, Michael dug deep into what was missing and truly needed in today's private security market.</p>
                 <p style="font-size: 1.1rem; color: #aaa; line-height: 1.8; font-weight: 300; margin-bottom: 20px;">In 2022, he opened his own firm to set a new standard in attention to detail and elite client service.</p>
              </div>
@@ -166,7 +168,7 @@ export function renderMidnight(root) {
           <div class="editorial-row reverse-mobile">
              <div class="ed-text">
                 <div style="color: #e5c158; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; margin-bottom: 25px;">04. The Mission</div>
-                <h3 style="font-size: 2.5rem; font-weight: 200; margin-bottom: 30px; line-height: 1.2;">Modern <span style="font-style: italic; color: #e5c158;">Leadership.</span></h3>
+                <h3 style="font-size: 2.5rem; font-weight: 200; margin-bottom: 30px; line-height: 1.2; text-align: center;">Modern <span style="font-style: italic; color: #e5c158;">Leadership.</span></h3>
                 <p style="font-size: 1.1rem; color: #aaa; line-height: 1.8; font-weight: 300; margin-bottom: 40px;">Today, Michael leads MCSO with a hands-on approach, ensuring that every deployment reflects his commitment to excellence, integrity, and client safety.</p>
                 <div style="padding-left: 30px; border-left: 2px solid #e5c158;">
                    <p style="font-size: 1.3rem; color: #fff; font-style: italic; font-family: 'Playfair Display', serif; line-height: 1.6; margin: 0;">
@@ -175,7 +177,7 @@ export function renderMidnight(root) {
                 </div>
              </div>
              <div class="ed-image">
-                 <img src="/assets/michael_new_suit.jpg" alt="Modern Leadership" style="object-position: center 10%;">
+                 <img src="/assets/michael_modern_leadership.jpg" alt="Modern Leadership" style="object-position: center 20%;">
              </div>
           </div>
         </section>
@@ -332,131 +334,22 @@ export function renderMidnight(root) {
               }
            </style>
 
-           <!-- Row 1: Tactical Fleet -->
+           ${siteData.gallery.sections.map(section => `
            <div class="gallery-row">
               <div class="gallery-row-title">
-                 <span>Tactical Fleet</span>
+                 <span>${section.name}</span>
                  <div class="scroll-hint">Drag to Explore <span>➔</span></div>
               </div>
               <div class="scroll-container">
+                 ${section.items.map(item => `
                  <div class="gallery-item">
-                    <img src="/assets/mcso_patrol_header.jpg" alt="Patrol Header">
-                    <div class="item-label">
-                       <h4>Deployment</h4>
-                       <p>High-Visibility Patrol Units</p>
-                    </div>
+                    <img src="${item.src}" alt="${item.label}">
                  </div>
-                 <div class="gallery-item">
-                    <img src="/assets/fleet/fleet_5.jpg" alt="Fleet Unit">
-                    <div class="item-label">
-                       <h4>Patrol Unit</h4>
-                       <p>Community Security</p>
-                    </div>
-                 </div>
-                 <div class="gallery-item">
-                    <img src="/assets/fleet/fleet_3.jpg" alt="Detail">
-                    <div class="item-label">
-                       <h4>Command Response</h4>
-                       <p>Dedicated Vehicles</p>
-                    </div>
-                 </div>
-                 <div class="gallery-item">
-                    <img src="/assets/fleet/fleet_4.jpg" alt="Night Ops">
-                    <div class="item-label">
-                       <h4>Night Operations</h4>
-                       <p>24/7 Vigilance</p>
-                    </div>
-                 </div>
-                 <div class="gallery-item">
-                    <img src="/assets/fleet/fleet_1.jpg" alt="Mobile Unit">
-                    <div class="item-label">
-                       <h4>Mobile Units</h4>
-                       <p>Versatile Deployment</p>
-                    </div>
-                 </div>
-                 <div class="gallery-item">
-                    <img src="/assets/fleet/fleet_2.jpg" alt="Patrol Ready">
-                    <div class="item-label">
-                       <h4>Transport</h4>
-                       <p>Secure Escorts</p>
-                    </div>
-                 </div>
+                 `).join('')}
               </div>
               <div class="gallery-row-progress"><div class="progress-bar"></div></div>
            </div>
-
-
-           
-           <!-- Row 4: Team in the Field -->
-           <div class="gallery-row">
-              <div class="gallery-row-title">
-                 <span>Team in the Field</span>
-                 <div class="scroll-hint">Drag to Explore <span>➔</span></div>
-              </div>
-              <div class="scroll-container">
-                 <div class="gallery-item">
-                    <img src="/assets/field/222.jpg" alt="Field Team Member">
-                    <div class="item-label">
-                       <h4>Field Ops</h4>
-                       <p>On-Site Security</p>
-                    </div>
-                 </div>
-                 <div class="gallery-item">
-                    <img src="/assets/field/444.jpg" alt="Field Supervisor">
-                    <div class="item-label">
-                       <h4>Protection</h4>
-                       <p>Active Vigilance</p>
-                    </div>
-                 </div>
-                 <div class="gallery-item">
-                    <img src="/assets/field/7777.jpg" alt="Security Briefing">
-                    <div class="item-label">
-                       <h4>Operations</h4>
-                       <p>Field Commands</p>
-                    </div>
-                 </div>
-                 <div class="gallery-item">
-                    <img src="/assets/field/56.jpg" alt="Command Unit">
-                    <div class="item-label">
-                       <h4>Supervision</h4>
-                       <p>Event Security</p>
-                    </div>
-                 </div>
-              </div>
-              <div class="gallery-row-progress"><div class="progress-bar"></div></div>
-           </div>
-           
-           <!-- Row 5: Executive Protection -->
-           <div class="gallery-row">
-              <div class="gallery-row-title">
-                 <span>Executive Protection</span>
-                 <div class="scroll-hint">Drag to Explore <span>➔</span></div>
-              </div>
-              <div class="scroll-container">
-                 <div class="gallery-item">
-                    <img src="/assets/executive/exec_1.jpg" alt="Executive Protection Detail">
-                    <div class="item-label">
-                       <h4>Close Protection</h4>
-                       <p>High-Profile Security</p>
-                    </div>
-                 </div>
-                 <div class="gallery-item">
-                    <img src="/assets/executive/exec_2.jpg" alt="VIP Escort">
-                    <div class="item-label">
-                       <h4>VIP Escort</h4>
-                       <p>Discreet Vigilance</p>
-                    </div>
-                 </div>
-                 <div class="gallery-item">
-                    <img src="/assets/executive/exec_3.jpg" alt="Personal Security">
-                    <div class="item-label">
-                       <h4>Personal Security</h4>
-                       <p>Threat Mitigation</p>
-                    </div>
-                 </div>
-              </div>
-              <div class="gallery-row-progress"><div class="progress-bar"></div></div>
-           </div>
+           `).join('')}
            <!-- Lightbox -->
            <div id="lightbox">
               <div id="lightbox-close" style="position: absolute; top: 30px; right: 40px; color: #fff; font-size: 2rem; font-weight: 300; letter-spacing: 2px; z-index: 3001; cursor: pointer;">✕</div>
@@ -502,7 +395,7 @@ export function renderMidnight(root) {
 
       <footer style="padding: 100px 10% 60px 10%; border-top: 1px solid rgba(255,255,255,0.03); background: #0a0a0c; text-align: center;">
          <div style="margin-bottom: 30px; display: flex; justify-content: center;">
-            <img src="/assets/mcso_star_badge.png" alt="MCSO Logo" style="width: 240px; height: 240px; object-fit: contain; opacity: 0.8;">
+            <img src="/assets/mcso_star_badge_new.png" alt="MCSO Logo" style="width: 240px; height: 240px; object-fit: contain; opacity: 0.8;">
          </div>
          <p style="color: #444; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;">RESPOND // RESPECT // RESOLVE</p>
          <p style="color: #222; font-size: 0.7rem; letter-spacing: 1px; margin-top: 40px;">&copy; 2026 MICHAEL COLON SECURITY ORGANIZATION LLC // US MILITARY VETERAN OWNED.</p>
