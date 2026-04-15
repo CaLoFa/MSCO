@@ -88,11 +88,7 @@ export const siteData = {
           { src: "/assets/fleet/fleet_4.jpg", label: "Night Operations", desc: "24/7 Vigilance" },
           { src: "/assets/fleet/fleet_1.jpg", label: "Mobile Units", desc: "Versatile Deployment" },
           { src: "/assets/fleet/fleet_2.jpg", label: "Transport", desc: "Secure Escorts" },
-          { src: "/assets/fleet/fleet_6.jpg", label: "PPU-1", desc: "Patrol Pursuit Unit" },
-          { src: "/assets/fleet/fleet_7.jpg", label: "Operations", desc: "Field Performance" },
-          { src: "/assets/fleet/fleet_8.jpg", label: "Precision", desc: "Fleet Aesthetics" },
-          { src: "/assets/fleet/fleet_9.jpg", label: "Response", desc: "Rapid Deployment" },
-          { src: "/assets/fleet/fleet_10.jpg", label: "Night Patrol", desc: "24/7 Security" },
+          { src: "/assets/fleet/fleet_6.jpg", label: "PPU-1", desc: "Patrol Pursuit Unit" }
         ]
       },
       {
