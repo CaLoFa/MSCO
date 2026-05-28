@@ -113,7 +113,8 @@ export const siteData = {
           { src: "/assets/field/Screenshot_20250630_185918_Photos.jpg", label: "Night Ops", desc: "24/7 Protection" },
           { src: "/assets/executive/20260519_142252~2.jpg", label: "Security Detail", desc: "Team Brief" },
           { src: "/assets/executive/20260521_190452.jpg", label: "Active Watch", desc: "Field Supervision" },
-          { src: "/assets/executive/Screenshot_20260512_161854_Photos.jpg", label: "Night Patrol", desc: "Security Guard" }
+          { src: "/assets/executive/Screenshot_20260512_161854_Photos.jpg", label: "Night Patrol", desc: "Security Guard" },
+          { src: "/assets/fleet/20260521_190721~2.jpg", label: "Fleet Transport", desc: "Secure Vehicle" }
         ]
       },
       {
