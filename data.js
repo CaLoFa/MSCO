@@ -88,13 +88,17 @@ export const siteData = {
           { src: "/assets/fleet/fleet_4.jpg", label: "Night Operations", desc: "24/7 Vigilance" },
           { src: "/assets/fleet/fleet_1.jpg", label: "Mobile Units", desc: "Versatile Deployment" },
           { src: "/assets/fleet/fleet_2.jpg", label: "Transport", desc: "Secure Escorts" },
-          { src: "/assets/fleet/fleet_6.jpg", label: "PPU-1", desc: "Patrol Pursuit Unit" }
+          { src: "/assets/fleet/fleet_6.jpg", label: "PPU-1", desc: "Patrol Pursuit Unit" },
+          { src: "/assets/fleet/20260315_233438~4.jpg", label: "Patrol Unit", desc: "Fleet Vehicle" },
+          { src: "/assets/fleet/20260519_142312.jpg", label: "Fleet Unit", desc: "Vehicle Patrol" },
+          { src: "/assets/fleet/20260519_142321.jpg", label: "Command Unit", desc: "Patrol Duties" },
+          { src: "/assets/fleet/20260521_190721~2.jpg", label: "Fleet Transport", desc: "Secure Vehicle" },
+          { src: "/assets/fleet/Screenshot_20260522_020340_Photos.jpg", label: "Mobile Unit", desc: "On Duty" }
         ]
       },
       {
         name: "Meet the Team",
         items: [
-          { src: "/assets/field/222.jpg", label: "Field Ops", desc: "On-Site Security" },
           { src: "/assets/field/444.jpg", label: "Field Supervisor", desc: "Protection" },
           { src: "/assets/field/7777.jpg", label: "Operations", desc: "Field Commands" },
           { src: "/assets/field/56.jpg", label: "Supervision", desc: "Event Security" },
@@ -106,7 +110,10 @@ export const siteData = {
           { src: "/assets/field/Screenshot_20240919_073152_Photos.jpg", label: "Night Patrol", desc: "Security Guard" },
           { src: "/assets/field/Screenshot_20240923_160301_Photos.jpg", label: "Active Watch", desc: "Field Supervision" },
           { src: "/assets/field/AISelect_20250630_190149_Photos.jpg", label: "Team Ops", desc: "Field Operations" },
-          { src: "/assets/field/Screenshot_20250630_185918_Photos.jpg", label: "Night Ops", desc: "24/7 Protection" }
+          { src: "/assets/field/Screenshot_20250630_185918_Photos.jpg", label: "Night Ops", desc: "24/7 Protection" },
+          { src: "/assets/executive/20260519_142252~2.jpg", label: "Security Detail", desc: "Team Brief" },
+          { src: "/assets/executive/20260521_190452.jpg", label: "Active Watch", desc: "Field Supervision" },
+          { src: "/assets/executive/Screenshot_20260512_161854_Photos.jpg", label: "Night Patrol", desc: "Security Guard" }
         ]
       },
       {
@@ -123,7 +130,11 @@ export const siteData = {
           { src: "/assets/field/Screenshot_20241212_021617_Photos.png", label: "Security Log", desc: "Operational Overview" },
           { src: "/assets/field/Screenshot_20250630_185746_Photos.jpg", label: "Tactical Ops", desc: "Field Work" },
           { src: "/assets/field/Screenshot_20250630_190022_Photos.jpg", label: "Response Team", desc: "Deployment" },
-          { src: "/assets/field/Screenshot_20260222_080411_Photos.jpg", label: "Monitoring", desc: "Security Systems" }
+          { src: "/assets/field/Screenshot_20260222_080411_Photos.jpg", label: "Monitoring", desc: "Security Systems" },
+          { src: "/assets/executive/Screenshot_20260521_212413_Photos.jpg", label: "Close Protection", desc: "VIP Escort" },
+          { src: "/assets/executive/Screenshot_20260521_212510_Photos.jpg", label: "Personal Security", desc: "Threat Mitigation" },
+          { src: "/assets/executive/Screenshot_20260521_212516_Photos.jpg", label: "Security Detail", desc: "Operations" },
+          { src: "/assets/executive/Screenshot_20260522_032914_Photos.jpg", label: "VIP Protection", desc: "Discreet Vigilance" }
         ]
       }
     ]
